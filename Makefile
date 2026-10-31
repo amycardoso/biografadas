@@ -2,7 +2,7 @@ PY := .venv/bin/python
 ROTULOS ?= v3
 JUPYTER := .venv/bin/jupyter
 
-.PHONY: setup setup-ml populacao populacao-atualizar coleta sentencas criacao amostra lotes rotulos reforco rotulos-v3 modelos bertimbau notebooks limpar-cache
+.PHONY: setup setup-ml populacao populacao-atualizar coleta sentencas criacao amostra lotes rotulos reforco rotulos-v3 modelos bertimbau inferencia resultados notebooks limpar-cache
 
 setup:
 	python3 -m venv .venv
@@ -59,11 +59,19 @@ bertimbau:
 	ROTULOS=$(ROTULOS) nice -n 10 .venv-ml/bin/python scripts/bertimbau.py
 	cd scripts && ROTULOS=$(ROTULOS) ../$(PY) -c "import modelos; modelos.avaliar_todos()"
 
+## Etapa 5: aplicação às 1,12M sentenças e tabelas das perguntas 2–5
+inferencia:
+	nice -n 10 .venv-ml/bin/python scripts/inferencia.py
+
+resultados:
+	cd scripts && nice -n 10 ../$(PY) resultados.py
+
 notebooks:
-	cd scripts && ../$(PY) gerar_notebook_01.py && ../$(PY) gerar_notebook_02.py && ../$(PY) gerar_notebook_03.py
+	cd scripts && ../$(PY) gerar_notebook_01.py && ../$(PY) gerar_notebook_02.py && ../$(PY) gerar_notebook_03.py && ../$(PY) gerar_notebook_04.py
 	$(JUPYTER) nbconvert --to notebook --execute --inplace notebooks/01_populacao.ipynb
 	$(JUPYTER) nbconvert --to notebook --execute --inplace notebooks/02_coleta.ipynb
 	$(JUPYTER) nbconvert --to notebook --execute --inplace notebooks/03_classificador.ipynb
+	$(JUPYTER) nbconvert --to notebook --execute --inplace notebooks/04_analises.ipynb
 
 limpar-cache:
 	rm -rf data/raw data/cache

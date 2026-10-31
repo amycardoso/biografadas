@@ -1,0 +1,8 @@
+{
+ "pessoas": 45381,
+ "F": 9276,
+ "M": 36105,
+ "bootstrap_replicas": 300,
+ "metodo_principal": "precisao ponderada por sexo",
+ "unidade_principal": "pessoa"
+}

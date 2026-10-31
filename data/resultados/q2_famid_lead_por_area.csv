@@ -1,0 +1,23 @@
+area,sexo,rotulo,pessoas,%,IC95_inf,IC95_sup,% bruto
+artes_visuais,F,FAM_ID,558,0.44,0.21,0.81,0.38
+artes_visuais,M,FAM_ID,1975,0.5,0.32,0.72,0.5
+atuacao_tv,F,FAM_ID,1972,0.53,0.28,0.86,0.46
+atuacao_tv,M,FAM_ID,1676,0.57,0.32,0.83,0.57
+ciencia_academia,F,FAM_ID,902,0.48,0.24,0.81,0.48
+ciencia_academia,M,FAM_ID,2911,0.23,0.14,0.33,0.23
+esporte,F,FAM_ID,1653,0.16,0.04,0.37,0.06
+esporte,M,FAM_ID,7143,0.16,0.1,0.22,0.16
+jornalismo_comunicacao,F,FAM_ID,593,0.28,0.11,0.57,0.18
+jornalismo_comunicacao,M,FAM_ID,1352,0.27,0.13,0.44,0.27
+literatura,F,FAM_ID,684,0.54,0.24,0.98,0.49
+literatura,M,FAM_ID,1814,0.19,0.08,0.32,0.19
+musica,F,FAM_ID,926,0.41,0.19,0.76,0.28
+musica,M,FAM_ID,2896,0.34,0.23,0.47,0.34
+outros,F,FAM_ID,219,0.82,0.27,1.46,0.76
+outros,M,FAM_ID,781,0.23,0.07,0.45,0.23
+politica,F,FAM_ID,1170,2.13,1.37,2.9,2.49
+politica,M,FAM_ID,11629,0.36,0.3,0.41,0.36
+religiao,F,FAM_ID,80,0.27,0.04,0.67,0.04
+religiao,M,FAM_ID,1282,0.03,0.0,0.07,0.03
+sem_ocupacao,F,FAM_ID,519,1.32,0.63,2.2,1.39
+sem_ocupacao,M,FAM_ID,2646,0.31,0.21,0.44,0.31

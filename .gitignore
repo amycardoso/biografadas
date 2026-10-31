@@ -10,3 +10,4 @@ __pycache__/
 .DS_Store
 # texto derivado (grande; regenerável com `make sentencas`)
 data/processed/sentencas.parquet
+data/processed/predicoes.parquet

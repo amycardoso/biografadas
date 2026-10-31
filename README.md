@@ -2,7 +2,7 @@
 
 Como a Wikipédia em português descreve as biografias de **mulheres e homens brasileiros**: quanto do texto trata de casamento, filhos, aparência e de ser "esposa de" alguém, em comparação com obra e carreira, e de que forma isso acontece.
 
-> Status: **etapas 1 a 4 concluídas** (população, coleta, segmentação, classificador). Próxima: aplicar o classificador às 1,1 milhão de sentenças e responder às perguntas.
+> Status: **etapas 1 a 5 concluídas**: população, coleta, segmentação, classificador e análise das 1,12 milhão de sentenças. Os rótulos ainda não têm validação humana.
 
 ## Perguntas
 
@@ -89,6 +89,49 @@ F1 do BERTimbau v3 por rótulo (suporte no teste entre parênteses):
 
 O treino de cada rodada levou cerca de 7 a 8 minutos no MPS de um M1 Pro (4 épocas, batch 16, `max_len` 128, perda com peso de classe ∝ 1/√frequência). A época foi escolhida pelo macro-F1 numa validação separada por pessoa.
 
+## Achados principais
+
+Fonte: [`notebooks/04_analises.ipynb`](notebooks/04_analises.ipynb), com as tabelas em [`data/resultados/`](data/resultados/).
+
+- **Dados:** o BERTimbau v3 foi aplicado às 1.120.642 sentenças de 45.381 biografias (9.276 de mulheres e 36.105 de homens).
+- **Unidade:** a **pessoa**, isto é, a média, entre as biografias, da fração das sentenças de cada uma com o rótulo.
+- **Correção:** os números estão corrigidos pela precisão do classificador.
+- **Intervalos:** os IC de 95% vêm de um bootstrap que reamostra as pessoas e o teste ao mesmo tempo.
+
+**1. Identidade emprestada (P2).** No lead, **0,68%** das sentenças apresentam a mulher por um parente (IC 0,45–0,96), contra **0,29%** nos homens (0,26–0,33).
+- A diferença F−M é de +0,38 p.p. (IC 0,15–0,67). Ela se mantém sem os stubs: +0,40 (0,16–0,69).
+- Em biografias inteiras: 2,3% das mulheres têm ao menos uma sentença de lead desse tipo, contra 1,1% dos homens (contagem bruta).
+- O efeito se concentra em **política**: 2,13% (1,37–2,90) nas mulheres contra 0,36% (0,30–0,41) nos homens, uma diferença de +1,77 p.p. (1,05–2,52). Há cônjuges de políticos classificadas como políticas pelo Wikidata.
+- Também aparece em literatura (+0,35; 0,04–0,72) e entre pessoas sem ocupação no Wikidata (+1,01; 0,40–1,78).
+- Nas artes, na atuação, na música e no esporte, a diferença é nula.
+- *Exemplos de lead:* "Foi esposa de Mestre Didi por meio século." / "É viúva do 59.º governador de São Paulo…" / "Era mãe do deputado federal…". Entre os homens, o padrão aparece sobretudo como "pai de" alguém notável.
+
+**2. Marcação de gênero (P3).** Frases como "primeira mulher a…" ou "a única mulher…" aparecem em **0,95%** das sentenças das biografias de mulheres (0,59–1,46) e quase nunca nas de homens (0,02%).
+- No lead são 1,69% (1,03–2,59).
+- É mais frequente em política (2,23%; 1,33–3,46).
+- É mais comum para mulheres nascidas até 1899 (1,72%) do que para as nascidas a partir de 1950 (0,81%).
+- Não mudou de forma clara com o ano de criação do artigo: de 0,80% em 2002–06 para 1,11% em 2022–26, com intervalos que se sobrepõem.
+
+**3. Família como capital em política (P4).** **Não há diferença por sexo**: 1,48% (1,08–2,00) nas mulheres e 1,55% (1,02–2,17) nos homens, F−M de −0,07 p.p. (−0,89 a 0,66).
+- A genealogia política ("filho do ex-prefeito…") é comum aos dois sexos.
+- O que distingue as mulheres em política é a identidade emprestada (item 1), não o capital familiar.
+
+**4. Tempo (P5).** A identidade emprestada no lead **caiu nos artigos mais recentes**, para os dois sexos: nas mulheres, de 1,06% (2007–11) para 0,54% (2022–26). Mas **a diferença F−M persiste**: +0,71 p.p. (0,37–1,13) em 2007–11 e +0,40 p.p. (0,16–0,72) em 2022–26. Família como detalhe não difere por sexo em nenhum período.
+
+**5. O que não muda.** O volume de família como detalhe, como casamento e filhos, é igual entre os sexos: 2,43% contra 2,37% das sentenças. Isso confirma o teste de viabilidade, em que o viés aparece na **função** da menção, não na quantidade.
+
+**Sensibilidade ao método de correção** (FAM_ID no lead, F−M):
+- contagem bruta: +0,37 (0,27–0,48);
+- correção por precisão: +0,38 (0,15–0,67);
+- ACC: −0,23 (−0,32 a 1,21). O ACC é instável para classes raras, porque um único falso positivo de CAR no teste zera a estimativa. Por isso não é o método principal.
+
+### Método de correção
+
+`scripts/analise.py`: a estimativa principal multiplica as proporções previstas em cada grupo pela matriz P(verdadeiro | previsto).
+- **Estimativa da matriz:** no teste fixo, ponderada pelos pesos de amostragem (para refletir a prevalência na população) e **separada por sexo**, porque a prevalência de FAM_ID e GEN difere entre os sexos.
+- **Bootstrap:** cada réplica reamostra as pessoas do corpus (pesos de Poisson por pessoa) **e** as sentenças do teste. Assim, os intervalos incluem a incerteza da matriz de confusão.
+- **Pressuposto:** a precisão do classificador num grupo (por exemplo, mulheres em política) é igual à do teste do mesmo sexo. Com só 622 sentenças no teste, não dá para estimá-la por área.
+
 Um teste de viabilidade com 600 artigos e um piloto de 200 sentenças rotuladas mostraram duas coisas. Contar palavras de família quase não diferencia mulheres de homens. O que diferencia é a *função* da menção (família como identidade apareceu só em biografias de mulheres) e a marcação de gênero. Por isso o projeto mede a função de cada sentença, e não só a frequência de palavras. No piloto, a precisão do regex foi de 0,66 para família, 0,26 para marcação de gênero e 0,20 para aparência.
 
 ## Como reproduzir
@@ -103,6 +146,8 @@ make amostra      # etapa 4: amostra estratificada para rotulagem
 make rotulos      # valida e consolida os rótulos dos anotadores
 make modelos      # baselines regex e TF-IDF + avaliação (ROTULOS=v3 make modelos para a v3)
 make setup-ml && make bertimbau   # fine-tuning do BERTimbau (Python 3.12, MPS)
+make inferencia   # etapa 5: BERTimbau v3 nas 1,12 milhão de sentenças (~95 min no M1 Pro)
+make resultados   # tabelas das perguntas 2–5 em data/resultados/
 make notebooks    # executa os notebooks
 ```
 
@@ -187,7 +232,10 @@ A data de criação do artigo não está no Wikidata. Ela é estimada na etapa 2
 - **Sexo binário.** As comparações usam F e M. Os 391 casos restantes são reportados, mas são poucos para análise estatística.
 - **Áreas por regra.** O mapeamento automático cobre cerca de 95% das ocorrências de ocupação e deve ser revisado à mão nas ocupações mais frequentes.
 - **Gênero gramatical.** O português flexiona por gênero ("casada", "ela", "brasileira"). Mesmo com o nome e os pronomes mascarados, um classificador simples prevê o sexo da pessoa a partir de uma única sentença com AUC de 0,80. Os anotadores e os modelos "veem" o gênero. O guia proíbe usá-lo como critério, mas não há como garantir isso.
-- **Rótulos de LLM.** Os rótulos de referência vêm de um LLM. As métricas dos modelos medem a concordância com esse anotador, não com uma verdade humana.
+- **Rótulos de LLM, sem validação humana.** Os rótulos de referência vêm de um LLM. As métricas e a correção medem a concordância com esse anotador, não com uma verdade humana. A concordância LLM–LLM é κ 0,87.
+- **FAM_ID é raro.** Representa cerca de 0,3% a 0,7% das sentenças do lead, e o teste tem só 10 casos (F1 0,63, IC 0,29–0,86). As diferenças acima são estatisticamente distinguíveis de zero com a correção por precisão, mas não com o ACC. Elas dependem do pressuposto de transferência da precisão.
+- **Áreas do Wikidata.** Algumas mulheres notáveis como cônjuges de políticos aparecem com ocupação "político". Parte do efeito em política é de composição (quem entra na Wikipédia, e por quê), não só de redação.
+- **Leads e corpo.** Leads são curtos. A unidade "pessoa" dá o mesmo peso a stubs e artigos longos. Os resultados sem stubs estão em `q2_famid_lead_sem_stubs.csv`.
 
 ## Fontes e créditos
 
