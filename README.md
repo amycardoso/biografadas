@@ -1,5 +1,7 @@
 # biografadas
 
+**Página interativa:** <https://amycardoso.github.io/biografadas/>
+
 Como a Wikipédia em português descreve as biografias de **mulheres e homens brasileiros**: quanto do texto trata de casamento, filhos, aparência e de ser "esposa de" alguém, em comparação com obra e carreira, e de que forma isso acontece.
 
 > Status: **etapas 1 a 5 concluídas**: população, coleta, segmentação, classificador e análise das 1,12 milhão de sentenças. Os rótulos ainda não têm validação humana.
