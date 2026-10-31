@@ -127,14 +127,32 @@ Cada ocupação P106 recebe uma área sugerida por regras sobre o rótulo em por
 | `ocupacoes`, `ocupacoes_qid` | todas as ocupações P106 (rótulos em pt e QIDs), separadas por `\|` |
 | `ano_nasc`, `ano_morte`, `decada_nasc` | anos de P569 e P570 (o mais antigo, se houver mais de um) |
 
-A data de criação do artigo não está no Wikidata. Ela será coletada na etapa de texto, pela API da Wikipédia.
+A data de criação do artigo não está no Wikidata. Ela é estimada na etapa 2 (`scripts/criacao.py`).
+
+### `data/labels/`: sentenças rotuladas
+
+| arquivo | conteúdo |
+|---|---|
+| `amostra_v2.csv` | 3.954 sentenças (`scripts/amostra.py`): estrato, peso de amostragem, split por pessoa (622 no teste fixo), texto original e mascarado |
+| `rotulos_anotador_a.csv` | 1 rótulo por sentença, anotador A (subagente Claude Sonnet), guia v2, lotes de 100 |
+| `rotulos_anotador_b.csv` | 300 sentenças do teste, anotador B (subagente Claude Opus), para medir concordância |
+| `log_rotulagem.csv` | proveniência por lote: anotador, modelo, guia, prompt, data |
+| `concordancia_v2.json`, `discordancias_v2.csv` | κ de A×B e as sentenças em que os dois discordam |
+| `vazamento_genero.json` | AUC de um classificador que prevê o sexo a partir do texto mascarado |
+
+**Como foi a rotulagem:** não havia chave de API de LLM no ambiente. Por isso os anotadores são subagentes do Claude Code. Cada um recebe só o guia (`docs/guia_rotulos_v2.md`) e um lote com `id,texto` mascarado, sem sexo, área ou estrato (prompt em `docs/prompt_rotulagem_v2.md`). As saídas são validadas: todos os ids e só rótulos do conjunto. Um lote com ids malformados foi refeito.
+
+**Concordância:** κ = **0,78** entre A e B com o guia v2 (84% de concordância bruta, n = 300). No piloto com o guia v1, o κ entre dois LLMs tinha sido 0,63. FAM_ID ficou com κ = 0,92 e GEN com 1,00. A maior parte do desacordo que sobra é **OUTRO vs CAR na primeira frase do lead** ("[PESSOA] (cidade, data – data) foi um bispo…"): 22 dos 48 casos. Isso fica para o guia v3. Atenção: **esta é concordância LLM–LLM, não humana**. Uma validação humana do conjunto de teste continua pendente.
+
+**Licença:** os textos das sentenças são trechos curtos da Wikipédia e seguem sob CC BY-SA 4.0, como o restante dos dados derivados.
 
 ## Limitações conhecidas
 
 - **O critério herda os vieses do Wikidata.** A cidadania (P27), o sexo (P21) e as ocupações (P106) são preenchidos por voluntários. 7,3% das pessoas não têm ocupação e 9,9% não têm ano de nascimento.
 - **Sexo binário.** As comparações usam F e M. Os 391 casos restantes são reportados, mas são poucos para análise estatística.
 - **Áreas por regra.** O mapeamento automático cobre cerca de 95% das ocorrências de ocupação e deve ser revisado à mão nas ocupações mais frequentes.
-- **Gênero gramatical.** O português flexiona por gênero ("casada", "ela", "brasileira"). Qualquer comparação lexical ou modelo de texto precisa neutralizar essa flexão.
+- **Gênero gramatical.** O português flexiona por gênero ("casada", "ela", "brasileira"). Mesmo com o nome e os pronomes mascarados, um classificador simples prevê o sexo da pessoa a partir de uma única sentença com AUC de 0,80. Os anotadores e os modelos "veem" o gênero. O guia proíbe usá-lo como critério, mas não há como garantir isso.
+- **Rótulos de LLM.** Os rótulos de referência vêm de um LLM. As métricas dos modelos medem a concordância com esse anotador, não com uma verdade humana.
 
 ## Fontes e créditos
 
