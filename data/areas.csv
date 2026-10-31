@@ -1,0 +1,1506 @@
+qid,rotulo,n_pessoas,area,origem
+Q82955,político,11392,politica,auto
+Q937857,futebolista,5149,esporte,auto
+Q36180,escritor,3739,literatura,auto
+Q33999,ator,3645,atuacao_tv,auto
+Q1930187,jornalista,2929,jornalismo_comunicacao,auto
+Q177220,cantor,1715,musica,auto
+Q36834,compositor,1617,musica,auto
+Q40348,advogado(a),1615,politica,auto
+Q1622272,professor universitário,1265,ciencia_academia,auto
+Q49757,poeta,1200,literatura,auto
+Q639669,músico,1135,musica,auto
+Q250867,padre católico,1088,religiao,auto
+Q39631,médico,1061,ciencia_academia,auto
+Q10798782,ator/atriz de televisão,977,atuacao_tv,auto
+Q1028181,pintor,943,artes_visuais,auto
+Q611644,bispo católico,937,religiao,auto
+Q628099,treinador de futebol,907,esporte,auto
+Q2526255,diretor(a) de cinema,731,artes_visuais,auto
+Q4610556,modelo,697,atuacao_tv,auto
+Q37226,professor,647,ciencia_academia,auto
+Q28389,roteirista,639,artes_visuais,auto
+Q10800557,ator/atriz de cinema,636,atuacao_tv,auto
+Q43845,empresário,597,outros,auto
+Q15117302,jogador(a) de vôlei,557,esporte,auto
+Q201788,historiador,477,ciencia_academia,auto
+Q47064,militar,475,politica,auto
+Q6625963,romancista,467,literatura,auto
+Q81096,engenheiro,447,ciencia_academia,auto
+Q16533,juiz,429,politica,auto
+Q188094,economista,394,ciencia_academia,auto
+Q486748,pianista,348,musica,auto
+Q1650915,pesquisador(a),337,ciencia_academia,auto
+Q42973,arquiteto(a),327,artes_visuais,auto
+Q947873,apresentador de televisão,324,jornalismo_comunicacao,auto
+Q483501,artista,300,artes_visuais,auto
+Q855091,guitarrista,299,musica,auto
+Q753110,autor-compositor,294,musica,auto
+Q33231,fotógrafo,280,artes_visuais,auto
+Q11607585,lutadora de artes marciais mistas,278,esporte,auto
+Q10843402,nadador(a),266,esporte,auto
+Q3665646,jogador de basquetebol,266,esporte,auto
+Q185351,jurista,264,politica,auto
+Q131524,empreendedor,262,outros,auto
+Q193391,diplomata,262,politica,auto
+Q1281618,escultor,261,artes_visuais,auto
+Q333634,tradutor,252,literatura,auto
+Q11513337,atleta,235,esporte,auto
+Q183945,produtor musical,228,musica,auto
+Q715301,desenhista de história em quadrinhos,223,artes_visuais,auto
+Q2306091,sociólogo,210,ciencia_academia,auto
+Q212238,servidor público,204,politica,auto
+Q644687,desenhista,202,artes_visuais,auto
+Q2259451,ator de teatro,191,atuacao_tv,auto
+Q4964182,filósofo,184,ciencia_academia,auto
+Q4263842,crítico literário,182,literatura,auto
+Q2643890,vocalista,173,musica,auto
+Q3282637,produtor de cinema,169,artes_visuais,auto
+Q18581305,competidor de concurso de beleza,161,atuacao_tv,auto
+Q10349745,automobilista,155,esporte,auto
+Q15296811,desenhista,155,artes_visuais,auto
+Q214917,dramaturgo,153,literatura,auto
+Q15253558,ativista,150,politica,auto
+Q488205,cantautor,148,musica,auto
+Q4773904,antropólogo,147,ciencia_academia,auto
+Q158852,maestro,140,musica,auto
+Q2066131,atleta,139,esporte,auto
+Q17361156,jogador(a) de vôlei de praia,138,esporte,auto
+Q3391743,artista visual,138,artes_visuais,auto
+Q6665249,judoca,138,esporte,auto
+Q17125263,youtuber,136,jornalismo_comunicacao,auto
+Q10833314,tenista,135,esporte,auto
+Q1114448,cartunista,134,artes_visuais,auto
+Q14467526,linguista,131,ciencia_academia,auto
+Q55960555,artista discográfico,131,musica,auto
+Q15981151,músico de jazz,128,musica,auto
+Q2405480,ator de voz,126,atuacao_tv,auto
+Q18515558,futebolista de salão,124,esporte,auto
+Q901,cientista,124,ciencia_academia,auto
+Q5716684,dançarino,123,atuacao_tv,auto
+Q169470,físico,119,ciencia_academia,auto
+Q25393460,diácono,119,religiao,auto
+Q2722764,locutor de rádio,118,jornalismo_comunicacao,auto
+Q170790,matemático,114,ciencia_academia,auto
+Q48282,estudante,111,outros,auto
+Q109517242,quadrinista,105,artes_visuais,auto
+Q3455803,realizador,101,artes_visuais,auto
+Q17167049,especialista em literatura,100,literatura,auto
+Q2252262,rapper,100,musica,auto
+Q864503,biólogo(a),99,ciencia_academia,auto
+Q13582652,engenheiro civil,97,ciencia_academia,auto
+Q2309784,ciclista esportivo,97,esporte,auto
+Q12840545,handebolista,95,esporte,auto
+Q212980,psicólogo,95,ciencia_academia,auto
+Q152002,pastor,94,religiao,auto
+Q2374149,botânico,94,ciencia_academia,auto
+Q1414443,cineasta,93,artes_visuais,auto
+Q121594,professor,92,ciencia_academia,auto
+Q4594605,magistrado,92,politica,auto
+Q131512,agricultor,91,outros,auto
+Q1234713,teólogo,90,religiao,auto
+Q901402,geógrafo,88,ciencia_academia,auto
+Q11338576,lutador de box,87,esporte,auto
+Q5322166,designer,86,artes_visuais,auto
+Q859528,árbitro de futebol,86,esporte,auto
+Q11774202,ensaísta,85,literatura,auto
+Q4351403,percussionista,85,musica,auto
+Q1231865,pedagogo,83,ciencia_academia,auto
+Q182436,bibliotecário,82,ciencia_academia,auto
+Q384593,policial,82,politica,auto
+Q215536,comerciante,80,outros,auto
+Q380075,advogado,80,politica,auto
+Q974144,educador(a),80,ciencia_academia,auto
+Q1607826,editor,78,literatura,auto
+Q806798,banqueiro,78,outros,auto
+Q378622,automobilista,77,esporte,auto
+Q189290,oficial,75,politica,auto
+Q245068,humorista,75,atuacao_tv,auto
+Q3387717,diretor teatral,74,artes_visuais,auto
+Q4853732,escritor de literatura infantil,71,literatura,auto
+Q10873124,jogador de xadrez,70,esporte,auto
+Q1278335,instrumentista,69,musica,auto
+Q41583,treinador,69,esporte,auto
+Q1781198,agrônomo,68,ciencia_academia,auto
+Q11892507,roteirista de história em quadrinhos,67,artes_visuais,auto
+Q17524364,jogador de polo aquático,67,esporte,auto
+Q2906862,influenciador digital,67,jornalismo_comunicacao,auto
+Q13382576,remador,63,esporte,auto
+Q2059704,diretor de televisão,63,artes_visuais,auto
+Q593644,químico(a),63,ciencia_academia,auto
+Q520549,geólogo,62,ciencia_academia,auto
+Q551835,médico escritor,62,ciencia_academia,auto
+Q130857,DJ,60,musica,auto
+Q25439032,atleta paralímpico,60,esporte,auto
+Q708492,vereador(a),60,politica,auto
+Q98552221,artista plástico(a),60,artes_visuais,auto
+Q1238570,cientista político,59,politica,auto
+Q14915627,musicólogo,58,ciencia_academia,auto
+Q20751891,lutador de jiu-jitsu brasileiro,58,esporte,auto
+Q3578589,ambientalista,58,politica,auto
+Q1055894,deputado,57,politica,auto
+Q1476215,ativista de direitos humanos,57,politica,auto
+Q1925963,artista gráfico,56,artes_visuais,auto
+Q13418253,filólogo,52,ciencia_academia,auto
+Q2707485,cenógrafo,52,artes_visuais,auto
+Q5137571,treinador de basquete,52,esporte,auto
+Q2490358,coreógrafo,51,atuacao_tv,auto
+Q482980,autor,51,literatura,auto
+Q11569986,gravador,50,artes_visuais,auto
+Q13381572,ginasta artístico,50,esporte,auto
+Q19509201,ativista LGBTQ,50,politica,auto
+Q2516866,editor,50,literatura,auto
+Q350979,zoólogo,50,ciencia_academia,auto
+Q18805,naturalista,49,ciencia_academia,auto
+Q3055126,entomologista,48,ciencia_academia,auto
+Q578109,produtor de televisão,48,artes_visuais,auto
+Q18844224,escritor de ficção científica,47,literatura,auto
+Q211346,psiquiatra,47,ciencia_academia,auto
+Q329439,gravador,47,artes_visuais,auto
+Q69423232,guionista de cinema,47,artes_visuais,auto
+Q105186,farmacêutico,46,ciencia_academia,auto
+Q24037210,ginasta rítmico,46,esporte,auto
+Q4009406,velocista,46,esporte,auto
+Q2865819,cantor de ópera,45,musica,auto
+Q73306227,roteirista de televisão,45,artes_visuais,auto
+Q12406482,humorista,44,atuacao_tv,auto
+Q13561328,surfista,44,esporte,auto
+Q15627169,sindicalista,44,politica,auto
+Q27349,dentista,44,ciencia_academia,auto
+Q386854,baterista,44,musica,auto
+Q222344,diretor de fotografia,43,artes_visuais,auto
+Q270389,apresentador de notícias,43,jornalismo_comunicacao,auto
+Q13590141,apresentador,42,jornalismo_comunicacao,auto
+Q21057452,jogador de futebol de praia,42,esporte,auto
+Q476246,velejador,42,esporte,auto
+Q1259917,violinista,41,musica,auto
+Q16145150,professor de música,41,ciencia_academia,auto
+Q1643514,arranjador musical,41,musica,auto
+Q2986228,comentarista esportivo,41,jornalismo_comunicacao,auto
+Q11499147,ativista político(a),40,politica,auto
+Q6168364,guitarrista de jazz,40,musica,auto
+Q10370560,sertanista,39,ciencia_academia,auto
+Q11900058,explorador,39,ciencia_academia,auto
+Q1662561,paleontólogo,39,ciencia_academia,auto
+Q2045208,celebridade da internet,39,atuacao_tv,auto
+Q488111,ator pornográfico,39,atuacao_tv,auto
+Q627325,designer gráfico(a),39,artes_visuais,auto
+Q1287848,ialorixá,38,religiao,auto
+Q26481809,dirigente esportivo,38,esporte,auto
+Q3501317,designer de moda,38,artes_visuais,auto
+Q11481802,dublador(a),37,atuacao_tv,auto
+Q15949613,contista,37,literatura,auto
+Q3400985,acadêmico,37,ciencia_academia,auto
+Q599151,oficial,37,politica,auto
+Q674426,curador,37,artes_visuais,auto
+Q7042855,Editor de filme,37,literatura,auto
+Q82594,cientista da computação,37,ciencia_academia,auto
+Q13382533,taekwondista,36,esporte,auto
+Q18216771,criador de vídeos,36,jornalismo_comunicacao,auto
+Q3075052,folclorista,36,ciencia_academia,auto
+Q10841764,piloto de Fórmula 1,35,esporte,auto
+Q13382519,mesa-tenista,35,esporte,auto
+Q1371925,locutor,35,jornalismo_comunicacao,auto
+Q186360,enfermeiro,35,ciencia_academia,auto
+Q2095549,aviador,35,outros,auto
+Q18074503,artista de instalações,34,artes_visuais,auto
+Q4164507,crítico de arte,34,literatura,auto
+Q42909,repórter,34,jornalismo_comunicacao,auto
+Q8246794,blogueiro,34,jornalismo_comunicacao,auto
+Q1086863,colunista,33,jornalismo_comunicacao,auto
+Q11313148,jornalista esportivo,33,jornalismo_comunicacao,auto
+Q4220892,crítico de cinema,33,literatura,auto
+Q42603,sacerdote,33,religiao,auto
+Q774306,cirurgião,33,ciencia_academia,auto
+Q806805,bancário,33,outros,auto
+Q10355417,publicitário,32,jornalismo_comunicacao,auto
+Q2083925,colecionador de plantas,32,ciencia_academia,auto
+Q2462658,dirigente,32,outros,auto
+Q30185,prefeito,32,politica,auto
+Q864380,biógrafo,32,literatura,auto
+Q10272925,engenheira(o) agrícola,31,ciencia_academia,auto
+Q11296761,kickboxer,31,esporte,auto
+Q12362622,filantropo,31,outros,auto
+Q13141064,jogador de badminton,31,esporte,auto
+Q13381863,esgrimista,31,esporte,auto
+Q600751,promotor de justiça,31,politica,auto
+Q3658608,caricaturista,30,artes_visuais,auto
+Q805221,bailarino,30,atuacao_tv,auto
+Q131062,urbanista,29,ciencia_academia,auto
+Q1792450,historiador de arte,29,ciencia_academia,auto
+Q280447,carnavalesco,29,atuacao_tv,auto
+Q2961975,executivo de negócios,29,outros,auto
+Q326653,contador,29,outros,auto
+Q98544732,scientific collector,29,ciencia_academia,auto
+Q1524582,pecuarista,28,outros,auto
+Q2919046,bioquímico,28,ciencia_academia,auto
+Q7541856,ceramista,28,artes_visuais,auto
+Q822146,letrista,28,literatura,auto
+Q109250234,Intérprete de samba-enredo,27,musica,auto
+Q12800682,saxofonista,27,musica,auto
+Q1326886,engenheiro eletricista,27,ciencia_academia,auto
+Q13382566,canoísta,27,esporte,auto
+Q1415090,compositor de trilhas sonoras,27,musica,auto
+Q3330547,cronista,27,literatura,auto
+Q337084,drag queen,27,atuacao_tv,auto
+Q388513,lutador de muay thai,27,esporte,auto
+Q17486376,atirador esportivo,26,esporte,auto
+Q83307,ministro,26,politica,auto
+Q1327329,multi-instrumentista,25,musica,auto
+Q15077007,podcaster,25,jornalismo_comunicacao,auto
+Q24067349,violonista clássico,25,musica,auto
+Q860918,esperantista,25,outros,auto
+Q9017214,carateca,25,esporte,auto
+Q2730732,cavaleiro,24,esporte,auto
+Q111263847,criador de conteúdo digital,23,jornalismo_comunicacao,auto
+Q12713481,operário,23,outros,auto
+Q12859263,orador(a),23,outros,auto
+Q16004431,saltador,23,esporte,auto
+Q17502714,skatista,23,esporte,auto
+Q219477,missionário,23,religiao,auto
+Q2504617,romanista,23,ciencia_academia,auto
+Q27658988,participante de reality show,23,atuacao_tv,auto
+Q3410028,psicanalista,23,ciencia_academia,auto
+Q44508716,personalidade de televisão,23,atuacao_tv,auto
+Q11063,astrônomo,22,ciencia_academia,auto
+Q1235146,diretor de documentários,22,artes_visuais,auto
+Q2855502,delegado de polícia,22,politica,auto
+Q487596,dramaturgo,22,literatura,auto
+Q109530978,fanzineiro,21,literatura,auto
+Q1371378,etnologista,21,ciencia_academia,auto
+Q14089670,jogador de rúgbi de quinze,21,esporte,auto
+Q15319501,cientista social,21,ciencia_academia,auto
+Q15839134,ecólogo,21,ciencia_academia,auto
+Q15977927,educador de arte,21,ciencia_academia,auto
+Q3621491,arqueólogo,21,ciencia_academia,auto
+Q98833890,teólogo católico,21,religiao,auto
+Q1323191,figurinista,20,artes_visuais,auto
+Q1350157,crítico de música,20,musica,auto
+Q15306067,triatleta,20,esporte,auto
+Q2114605,farmacologista,20,ciencia_academia,auto
+Q3286043,modelo erótica,20,atuacao_tv,auto
+Q4991371,soldado,20,politica,auto
+Q584301,baixista,20,musica,auto
+Q957729,fotojornalista,20,jornalismo_comunicacao,auto
+Q10732476,colecionador de arte,19,outros,auto
+Q11305911,sambista,19,musica,auto
+Q205375,inventor,19,ciencia_academia,auto
+Q266569,animador,19,artes_visuais,auto
+Q28692502,ativista pelos direitos da mulher,19,politica,auto
+Q355242,showman,19,atuacao_tv,auto
+Q11124885,artista marcial,18,artes_visuais,auto
+Q12369333,lutador de luta amadora,18,esporte,auto
+Q17098559,ilustrador de quadrinhos (lápis),18,artes_visuais,auto
+Q20058725,deputado federal do Brasil,18,politica,auto
+Q3624437,desembargador,18,politica,auto
+Q10379007,teatrólogo,17,literatura,auto
+Q10774753,performista,17,atuacao_tv,auto
+Q1209498,poeta jurista,17,politica,auto
+Q15980158,escritor de não ficção,17,literatura,auto
+Q202883,veterinário,17,ciencia_academia,auto
+Q3126128,geneticista,17,ciencia_academia,auto
+Q713200,performer,17,atuacao_tv,auto
+Q12773412,parasitologista,16,outros,auto
+Q1469535,padre católico de rito romano,16,religiao,auto
+Q15978655,consultor,16,outros,auto
+Q16947675,ginasta,16,esporte,auto
+Q3104508,produtor cultural,16,outros,auto
+Q3242115,revolucionário,16,politica,auto
+Q3499072,chef,16,outros,auto
+Q462390,docente,16,outros,auto
+Q6337803,neurocientista,16,ciencia_academia,auto
+Q121998,embaixador,15,outros,auto
+Q129263212,policial militar,15,politica,auto
+Q1294787,artesão,15,artes_visuais,auto
+Q13235160,produtor,15,outros,auto
+Q15143191,divulgador científico,15,outros,auto
+Q15972912,pentatleta moderno,15,esporte,auto
+Q18576582,metalúrgico,15,outros,auto
+Q1906857,engenheiro mecânico,15,ciencia_academia,auto
+Q191808,freira,15,religiao,auto
+Q28098639,cordelista,15,literatura,auto
+Q3264451,cardiologista,15,outros,auto
+Q49476,arcebispo,15,religiao,auto
+Q512314,socialite,15,outros,auto
+Q548320,frade,15,religiao,auto
+Q7358,palhaço,15,atuacao_tv,auto
+Q1298794,diretor de dublagem,14,artes_visuais,auto
+Q13383011,bobsledder,14,outros,auto
+Q16271064,herpetólogo,14,outros,auto
+Q16947657,litógrafo,14,outros,auto
+Q45199,marinheiro,14,outros,auto
+Q50654094,treinador de futsal,14,esporte,auto
+Q5762300,desenhista de storyboard,14,artes_visuais,auto
+Q6051619,jornalista de opinião,14,jornalismo_comunicacao,auto
+Q62083492,young adult author,14,outros,auto
+Q10333969,museólogo,13,outros,auto
+Q13381376,halterofilista,13,esporte,auto
+Q13382460,maratonista,13,esporte,auto
+Q14972848,lexicógrafo,13,outros,auto
+Q156839,cozinheiro,13,outros,auto
+Q17307272,artista de circo,13,artes_visuais,auto
+Q17337766,crítico teatral,13,literatura,auto
+Q2566598,religioso,13,religiao,auto
+Q26237722,jogador de râguebi de sete,13,esporte,auto
+Q64825398,aposentado,13,outros,auto
+Q6606110,industrial,13,outros,auto
+Q780596,curador,13,artes_visuais,auto
+Q876864,redator,13,literatura,auto
+Q1225716,ornitólogo,12,outros,auto
+Q124516127,mesatenista paralímpica,12,esporte,auto
+Q12902372,flautista,12,musica,auto
+Q13382355,arqueiro,12,esporte,auto
+Q13474373,lutador profissional,12,esporte,auto
+Q1863064,acordeonista,12,musica,auto
+Q2055046,fisiologista,12,outros,auto
+Q26759595,comunicologista,12,outros,auto
+Q2732142,estatístico,12,ciencia_academia,auto
+Q5758653,professor do ensino médio,12,ciencia_academia,auto
+Q583271,médium,12,religiao,auto
+Q6430706,crítico,12,literatura,auto
+Q7019111,assistente social,12,outros,auto
+Q706364,diretor de arte,12,artes_visuais,auto
+Q752129,astrofísico,12,ciencia_academia,auto
+Q838811,camponês,12,outros,auto
+Q8963721,genealogista,12,outros,auto
+Q9648008,banjoísta,12,outros,auto
+Q10384029,traficante de drogas,11,outros,auto
+Q1759246,produtor de teatro,11,outros,auto
+Q19723482,bandolinista,11,outros,auto
+Q2159907,criminoso,11,outros,auto
+Q2675537,professor de música,11,ciencia_academia,auto
+Q29840095,capoeirista,11,esporte,auto
+Q484188,assassino em série,11,outros,auto
+Q484876,diretor executivo,11,artes_visuais,auto
+Q486839,parlamentar,11,outros,auto
+Q58968,intelectual,11,outros,auto
+Q694748,fisioterapeuta,11,outros,auto
+Q728711,Playmate,11,outros,auto
+Q8359428,ativista social,11,politica,auto
+Q935666,maquiador,11,outros,auto
+Q132050,governador,10,politica,auto
+Q13416354,mineralogista,10,outros,auto
+Q15995642,líder religioso,10,religiao,auto
+Q16742096,físico nuclear,10,ciencia_academia,auto
+Q1757008,assistente de direção,10,outros,auto
+Q18715859,nadador(a) de nado sincronizado,10,esporte,auto
+Q1897112,patrão,10,outros,auto
+Q21141408,pentatleta,10,esporte,auto
+Q2478141,aristocrata,10,outros,auto
+Q2486919,porta-bandeira,10,outros,auto
+Q29182,bispo,10,religiao,auto
+Q3014296,motociclista,10,esporte,auto
+Q3779582,microbiologista,10,outros,auto
+Q3796928,funcionário público,10,politica,auto
+Q4379701,jogador profissional,10,esporte,auto
+Q4985847,Pai-de-santo,10,religiao,auto
+Q806283,bandeirante,10,outros,auto
+Q806349,líder de banda,10,outros,auto
+Q90496069,nadador(a) paralímpico(a),10,esporte,auto
+Q9379869,palestrante,10,outros,auto
+Q94791573,TikToker,10,outros,auto
+Q10301984,indigenista,9,outros,auto
+Q11499929,literata(o),9,literatura,auto
+Q12765408,epidemiologista,9,ciencia_academia,auto
+Q13219587,patinador artístico sobre gelo,9,outros,auto
+Q18814623,autobiógrafo,9,literatura,auto
+Q21550489,artista conceitual,9,artes_visuais,auto
+Q2251335,professor,9,ciencia_academia,auto
+Q2259532,eclesiástico,9,outros,auto
+Q2312637,profissional de educação física,9,outros,auto
+Q3357567,modelo de moda,9,atuacao_tv,auto
+Q3368718,patologista,9,outros,auto
+Q4144610,esquiador alpino,9,outros,auto
+Q5482740,programador,9,outros,auto
+Q557880,investidor,9,outros,auto
+Q66314404,jazz singer,9,outros,auto
+Q7888586,engenheiro químico,9,ciencia_academia,auto
+Q831474,presbítero,9,religiao,auto
+Q10694573,artista têxtil,8,artes_visuais,auto
+Q11814411,documentarista,8,outros,auto
+Q12059906,pastor,8,religiao,auto
+Q12119633,imunologista,8,outros,auto
+Q13219637,violoncelista,8,outros,auto
+Q13381428,saltador em comprimento,8,esporte,auto
+Q13382608,esquiador cross-country,8,outros,auto
+Q1402561,líder militar,8,politica,auto
+Q144662,agente desportivo,8,outros,auto
+Q15472169,mecenas,8,outros,auto
+Q1642960,comentarista,8,jornalismo_comunicacao,auto
+Q1954956,ator de teatro musical,8,atuacao_tv,auto
+Q2576499,nutricionista,8,outros,auto
+Q2640827,ginecologista,8,outros,auto
+Q3374326,muralista,8,artes_visuais,auto
+Q34074720,feminista,8,politica,auto
+Q4205432,ictiólogo,8,outros,auto
+Q4439155,fundista,8,outros,auto
+Q57414145,streamer,8,jornalismo_comunicacao,auto
+Q635734,arquivista,8,ciencia_academia,auto
+Q6399436,VJ,8,outros,auto
+Q7330070,ministro das relações exteriores,8,politica,auto
+Q733786,monge,8,religiao,auto
+Q106376813,visual poet,7,literatura,auto
+Q10669499,oficial da marinha,7,politica,auto
+Q1075651,tecladista,7,musica,auto
+Q109120509,colecionador de animais,7,outros,auto
+Q12144794,prosista,7,outros,auto
+Q12359071,anarquista,7,outros,auto
+Q128124,engenheiro de áudio,7,ciencia_academia,auto
+Q13381753,corredor de meia-distância,7,esporte,auto
+Q1483709,proprietário de terras,7,outros,auto
+Q14915751,prostituto(a),7,outros,auto
+Q15360275,estudante secundarista,7,outros,auto
+Q155647,astrólogo,7,outros,auto
+Q15982795,fisiculturista,7,outros,auto
+Q16532929,administrador,7,outros,auto
+Q202648,árbitro,7,esporte,auto
+Q212948,guerrilheiro,7,outros,auto
+Q23038410,cafeicultor,7,outros,auto
+Q24797688,show jumper,7,outros,auto
+Q2962070,designer de produção,7,artes_visuais,auto
+Q322170,sufragette,7,outros,auto
+Q330679,cantor,7,musica,auto
+Q3482594,showgirl,7,outros,auto
+Q3610436,estilista,7,artes_visuais,auto
+Q3644587,hidrólogo,7,outros,auto
+Q4110598,vlogger,7,outros,auto
+Q5780518,comunicador,7,jornalismo_comunicacao,auto
+Q61857538,ativista anticapacitista,7,politica,auto
+Q685433,vendedor,7,outros,auto
+Q736415,conferencista,7,outros,auto
+Q765778,organista,7,musica,auto
+Q10265290,deputado estadual,6,politica,auto
+Q1045845,vocalista,6,musica,auto
+Q104680,coronel,6,outros,auto
+Q1076502,diretor de coro,6,artes_visuais,auto
+Q10871364,jogador de beisebol,6,esporte,auto
+Q111853588,object artist,6,outros,auto
+Q1153051,arte-finalista,6,outros,auto
+Q1162163,diretor,6,artes_visuais,auto
+Q12013238,oftalmologista,6,outros,auto
+Q1214796,contrabaixista,6,musica,auto
+Q12377274,trompetista,6,musica,auto
+Q13415036,jogador de râguebi,6,esporte,auto
+Q134619078,sitting volleyball player,6,outros,auto
+Q134619568,para badminton player,6,outros,auto
+Q151197,engenheiro militar,6,politica,auto
+Q1706722,pesquisador,6,ciencia_academia,auto
+Q1734662,cartógrafo,6,outros,auto
+Q2029179,presbítero regular,6,religiao,auto
+Q2034021,costureiro,6,outros,auto
+Q22811707,decorador,6,outros,auto
+Q2727289,lutador de sumô,6,esporte,auto
+Q27532437,sufragista,6,outros,auto
+Q28146366,Freira,6,religiao,auto
+Q2815948,arquiteto paisagista,6,artes_visuais,auto
+Q2917466,sensitivo,6,outros,auto
+Q3922505,DJ producer,6,musica,auto
+Q47541952,produtor,6,outros,auto
+Q5371902,cravista,6,outros,auto
+Q60723829,pop singer,6,outros,auto
+Q66288471,ativista dos direitos transgêneros,6,politica,auto
+Q755070,narrador,6,outros,auto
+Q955464,pároco,6,outros,auto
+Q1056391,diretor,5,artes_visuais,auto
+Q11085831,intérprete,5,outros,auto
+Q1111648,colorista,5,outros,auto
+Q11303721,golfista,5,outros,auto
+Q11613590,theatre designer,5,artes_visuais,auto
+Q11626095,public administration scholar,5,outros,auto
+Q118865,clarinetista,5,outros,auto
+Q12336252,social entrepreneur,5,outros,auto
+Q12360214,baixista,5,musica,auto
+Q12526417,abolicionista,5,outros,auto
+Q130213361,mixed-media artist,5,outros,auto
+Q13638192,obstetra,5,outros,auto
+Q13848274,saltador de triplo salto,5,esporte,auto
+Q1397808,membro da resistência,5,outros,auto
+Q1437754,xilogravador,5,artes_visuais,auto
+Q14906342,biofísico,5,ciencia_academia,auto
+Q15295720,jogador de poquer,5,esporte,auto
+Q15816836,bacteriologista,5,outros,auto
+Q15962340,teórico literário,5,outros,auto
+Q16062369,oncologista,5,outros,auto
+Q16402907,semiótico,5,outros,auto
+Q17165321,jogador de sinuca,5,esporte,auto
+Q17433421,jornalista científico,5,jornalismo_comunicacao,auto
+Q18545066,comediante stand-up,5,atuacao_tv,auto
+Q1919436,pediatra,5,ciencia_academia,auto
+Q207978,cônsul,5,outros,auto
+Q2145981,restaurador,5,outros,auto
+Q21680663,compositor de música clássica,5,musica,auto
+Q23892384,trampolitista,5,outros,auto
+Q2519376,desenhador de joias,5,outros,auto
+Q254651,navegador,5,outros,auto
+Q28528560,comunista,5,outros,auto
+Q2994387,assessor,5,outros,auto
+Q30059961,paleobotánico,5,outros,auto
+Q3630699,Designer de jogos,5,artes_visuais,auto
+Q4178004,publicista,5,outros,auto
+Q432386,pregador,5,outros,auto
+Q446966,restaurador,5,outros,auto
+Q54845077,designer de RPG,5,artes_visuais,auto
+Q55962467,goalball player,5,outros,auto
+Q59587410,colorista de histórias em quadrinhos,5,outros,auto
+Q66581878,social anthropologist,5,outros,auto
+Q6934789,artista multimídia,5,artes_visuais,auto
+Q73267024,locutor esportivo,5,jornalismo_comunicacao,auto
+Q739437,cartazista,5,outros,auto
+Q783906,neurologista,5,outros,auto
+Q856887,agente de segurança,5,outros,auto
+Q9149093,montanhista,5,outros,auto
+Q970153,ator infantil,5,atuacao_tv,auto
+Q1006676,juiz federal,4,politica,auto
+Q102038373,matemático aplicado,4,ciencia_academia,auto
+Q1049924,empresário,4,outros,auto
+Q1053574,produtor executivo,4,outros,auto
+Q106085390,cangaceiro,4,outros,auto
+Q107711,bombeiro,4,outros,auto
+Q10842936,piloto de rally,4,esporte,auto
+Q1104153,cônego,4,outros,auto
+Q110954375,indigenous rights activist,4,outros,auto
+Q1148872,imitador,4,outros,auto
+Q11774156,memorialista,4,literatura,auto
+Q11966252,ativista dos direitos animais,4,politica,auto
+Q1229025,tipógrafo,4,outros,auto
+Q12327806,piloto de motocross,4,esporte,auto
+Q12347522,etnógrafo,4,outros,auto
+Q12803959,corredor,4,esporte,auto
+Q130481652,comics editor,4,literatura,auto
+Q131410969,teorista queer,4,outros,auto
+Q132851,almirante,4,politica,auto
+Q13382487,atleta de windsurf,4,esporte,auto
+Q135672786,mestre da cultura popular,4,outros,auto
+Q15095148,grafiteiro,4,artes_visuais,auto
+Q152355,sapateiro,4,outros,auto
+Q1549283,latifundiário,4,outros,auto
+Q15839206,biólogo molecular,4,ciencia_academia,auto
+Q15986539,funcionário de esportes,4,outros,auto
+Q15991187,gramático(a),4,outros,auto
+Q16021386,engenheiro florestal,4,ciencia_academia,auto
+Q16278103,squash player,4,outros,auto
+Q16402890,jogador de damas,4,esporte,auto
+Q165029,eletricista,4,outros,auto
+Q16947320,geopolitólogo,4,outros,auto
+Q17010072,militante,4,outros,auto
+Q17040649,worship pastor,4,religiao,auto
+Q17143199,legista,4,outros,auto
+Q17405793,marchador,4,outros,auto
+Q175151,impressor,4,outros,auto
+Q1757598,ensino de arte,4,outros,auto
+Q1776724,gerente de teatro,4,outros,auto
+Q1818899,povoador,4,outros,auto
+Q1836630,maestro,4,musica,auto
+Q185196,obstetriz,4,outros,auto
+Q1861368,tatuador,4,outros,auto
+Q19204627,jogador de futebol americano,4,esporte,auto
+Q19350898,físico teórico,4,ciencia_academia,auto
+Q20669622,jornalista musical,4,jornalismo_comunicacao,auto
+Q20771242,galerista,4,outros,auto
+Q20826540,erudito,4,outros,auto
+Q211423,ourives,4,artes_visuais,auto
+Q21280562,ator de rádio,4,atuacao_tv,auto
+Q2135469,assessor jurídico,4,outros,auto
+Q21477194,artista contemporâneo,4,artes_visuais,auto
+Q23719050,boccia player,4,outros,auto
+Q2600526,instrutor de yoga,4,outros,auto
+Q2629392,bonequeiro,4,outros,auto
+Q27497422,helminthologist,4,outros,auto
+Q28164897,jujutsuka,4,outros,auto
+Q2914170,artista de rua,4,artes_visuais,auto
+Q3020602,drug dealer,4,outros,auto
+Q3024627,cartunista editorial,4,literatura,auto
+Q3111753,religious person,4,outros,auto
+Q3243461,colecionista,4,outros,auto
+Q372436,estadista,4,politica,auto
+Q3745071,escritor de ciência,4,literatura,auto
+Q381353,escritora,4,literatura,auto
+Q4479442,fundador,4,outros,auto
+Q4915128,Biomédico,4,ciencia_academia,auto
+Q497240,mestre de cerimônias,4,outros,auto
+Q5276395,gamer,4,outros,auto
+Q55187,cabeleireiro,4,outros,auto
+Q58825429,desportista olímpico,4,esporte,auto
+Q6116659,sacerdotisa,4,outros,auto
+Q61996187,pianista clássico,4,musica,auto
+Q66711686,engenheiro ferroviário,4,ciencia_academia,auto
+Q67221165,vexilógrafo,4,outros,auto
+Q80687,secretário executivo,4,outros,auto
+Q822484,Mestre-sala (Cerimônia),4,outros,auto
+Q832136,gerente,4,outros,auto
+Q84741730,engenheiro de produção,4,ciencia_academia,auto
+Q852857,profissional do sexo,4,outros,auto
+Q9304839,transformista,4,outros,auto
+Q102039658,bispo católico romano,3,religiao,auto
+Q10312791,juiz de direito,3,politica,auto
+Q10334684,médico de saúde pública,3,ciencia_academia,auto
+Q10659189,ladrão,3,outros,auto
+Q11287574,designer industrial,3,artes_visuais,auto
+Q11295636,designer de automóveis,3,artes_visuais,auto
+Q11455387,designer de móveis,3,artes_visuais,auto
+Q11494960,infectologista,3,outros,auto
+Q11499163,comentarista político,3,politica,auto
+Q11606860,picture book writer,3,outros,auto
+Q1208175,cinegrafista,3,outros,auto
+Q12377291,censor,3,outros,auto
+Q1251441,líder,3,outros,auto
+Q126011272,Lefebvrist bishop,3,outros,auto
+Q131930103,para taekwondo athlete,3,esporte,auto
+Q13382122,saltador em altura,3,esporte,auto
+Q13464497,saltador com vara,3,esporte,auto
+Q13570226,historiador literário,3,ciencia_academia,auto
+Q13854733,steeplechase runner,3,outros,auto
+Q138858,animador,3,artes_visuais,auto
+Q14284,procurador,3,politica,auto
+Q15117395,ciclista de pista,3,esporte,auto
+Q15401884,pesquisador médico,3,ciencia_academia,auto
+Q1569495,professor universitário,3,ciencia_academia,auto
+Q15707582,runway model,3,outros,auto
+Q15895020,engenheiro aeronáutico,3,ciencia_academia,auto
+Q15936497,Africanista,3,outros,auto
+Q16029547,biatleta,3,esporte,auto
+Q16148831,corretor de imóveis,3,outros,auto
+Q16271261,malacólogo,3,outros,auto
+Q1627196,Pharmazeut,3,outros,auto
+Q1658894,ilusionista,3,outros,auto
+Q16825962,primatologista,3,outros,auto
+Q16831394,mastozoólogo,3,ciencia_academia,auto
+Q17344952,aracnólogo,3,outros,auto
+Q17769800,traficante de escravos,3,outros,auto
+Q18120029,bibliófilo,3,outros,auto
+Q1907198,taxonomista,3,outros,auto
+Q193891,veterano,3,outros,auto
+Q19829999,culturologista,3,outros,auto
+Q19890761,artivista,3,outros,auto
+Q2004963,numismata,3,outros,auto
+Q20850090,gaitista,3,outros,auto
+Q21117684,tapeceiro,3,outros,auto
+Q2125610,ciclista,3,esporte,auto
+Q2138822,Clérigos regulares,3,outros,auto
+Q2180295,carteiro,3,outros,auto
+Q2182752,árbitro de basquetebol,3,esporte,auto
+Q21993562,ativista cultural,3,politica,auto
+Q223291,bandeirinha,3,outros,auto
+Q2378505,promotor de eventos,3,politica,auto
+Q23845879,powerlifter,3,outros,auto
+Q24017732,cientista da saúde pública,3,ciencia_academia,auto
+Q24265174,historiador da filosofia,3,ciencia_academia,auto
+Q2447386,dermatologista,3,outros,auto
+Q2449921,professor de teatro,3,ciencia_academia,auto
+Q256876,repentista,3,outros,auto
+Q267640,pesquisador independente,3,ciencia_academia,auto
+Q27317265,lusitanista,3,outros,auto
+Q27503001,atleta profissional,3,esporte,auto
+Q30131998,cultural anthropologist,3,outros,auto
+Q3024424,sonoplasta,3,outros,auto
+Q327029,mecânico,3,outros,auto
+Q3276037,color commentator,3,outros,auto
+Q3363630,parapsicólogo,3,ciencia_academia,auto
+Q3400050,ceramista,3,artes_visuais,auto
+Q3427922,gastrônomo,3,ciencia_academia,auto
+Q3479813,seringueiro,3,outros,auto
+Q3546255,oceanógrafo,3,outros,auto
+Q4182927,corretor de bolsa,3,outros,auto
+Q4220878,filmólogo,3,outros,auto
+Q435017,bispo-emérito,3,religiao,auto
+Q465501,duplo,3,outros,auto
+Q4676869,acting instructor,3,outros,auto
+Q50279140,streamer da Twitch,3,jornalismo_comunicacao,auto
+Q52008305,árbitro de artes marciais mistas,3,esporte,auto
+Q5352191,técnico,3,outros,auto
+Q54128,doméstico,3,outros,auto
+Q56312763,Engenheiros de electrónica,3,ciencia_academia,auto
+Q5819949,educador social,3,ciencia_academia,auto
+Q599898,cacique,3,outros,auto
+Q6491450,intendente,3,outros,auto
+Q6528049,defensor público,3,outros,auto
+Q658404,letrista,3,literatura,auto
+Q663272,perito criminal,3,outros,auto
+Q667982,diretor de criação,3,artes_visuais,auto
+Q674067,mímico,3,outros,auto
+Q697405,xamã,3,outros,auto
+Q738142,escriturário,3,outros,auto
+Q8142883,criminologista,3,outros,auto
+Q820037,minerador,3,outros,auto
+Q833860,empregada doméstica,3,outros,auto
+Q846750,Jóquei,3,esporte,auto
+Q9633356,assistente de palco,3,outros,auto
+Q9637303,Auditor fiscal,3,outros,auto
+Q98406729,Formula Two driver,3,outros,auto
+Q100742049,conference speaker,2,outros,auto
+Q102276804,gospel singer,2,outros,auto
+Q10274748,escrivão de polícia,2,outros,auto
+Q1027930,modelo de webcam,2,atuacao_tv,auto
+Q10354598,Propriedade rural,2,outros,auto
+Q10373653,aquarelista,2,outros,auto
+Q10385597,Turismólogo,2,outros,auto
+Q104188750,life scientist,2,outros,auto
+Q104218554,rock singer,2,outros,auto
+Q1049296,Diretor de elenco,2,artes_visuais,auto
+Q10497074,engenheiro de voo militar,2,politica,auto
+Q105175276,bossa nova singer,2,outros,auto
+Q106208189,computer artist,2,outros,auto
+Q1062952,character design,2,outros,auto
+Q10872101,anatomista,2,outros,auto
+Q10889302,esportista com deficiência,2,esporte,auto
+Q109459317,criador de conteúdo,2,jornalismo_comunicacao,auto
+Q10949665,auditor,2,outros,auto
+Q1130252,diretor esportivo,2,artes_visuais,auto
+Q114414171,para-atleta,2,esporte,auto
+Q11496048,fotógrafo de guerra,2,artes_visuais,auto
+Q1155081,seminarista católico,2,outros,auto
+Q116,monarca,2,outros,auto
+Q11679511,Proxeneta,2,outros,auto
+Q11774891,jogador do hóquei no gelo,2,esporte,auto
+Q1198887,diretor musical,2,artes_visuais,auto
+Q11999333,co-producer,2,outros,auto
+Q12094958,geofísico,2,ciencia_academia,auto
+Q121518410,Para canoeist,2,outros,auto
+Q12356615,viajante,2,outros,auto
+Q12374149,músico de rock,2,musica,auto
+Q124634523,Editor de livros,2,literatura,auto
+Q1259323,chefe tribal,2,outros,auto
+Q12773225,escravo,2,outros,auto
+Q12839983,wrestler,2,outros,auto
+Q12869138,contador de Histórias,2,outros,auto
+Q13138067,string player,2,outros,auto
+Q13219424,treinador de tênis,2,esporte,auto
+Q1328323,functionary,2,outros,auto
+Q133485,rabino,2,religiao,auto
+Q1339677,olheiro,2,outros,auto
+Q1340643,construtor,2,outros,auto
+Q135301631,apresentador,2,jornalismo_comunicacao,auto
+Q135450,irmão leigo,2,outros,auto
+Q136563609,sacerdote do Candomblé,2,religiao,auto
+Q140686,presidente,2,outros,auto
+Q14565331,lógico,2,outros,auto
+Q1487,hacker,2,outros,auto
+Q1511216,cortesão,2,outros,auto
+Q15214752,artista de cabaré,2,artes_visuais,auto
+Q15283040,Bispo ortodoxo,2,religiao,auto
+Q1537445,estivador,2,outros,auto
+Q15634281,virologista,2,outros,auto
+Q15709642,snowboarder,2,outros,auto
+Q15855449,mágico,2,outros,auto
+Q15976092,pesquisador de inteligência artificial,2,ciencia_academia,auto
+Q15982858,orador motivacional,2,outros,auto
+Q16003954,oboísta,2,outros,auto
+Q16060693,conservacionista,2,outros,auto
+Q16303386,grappler,2,outros,auto
+Q16308156,anglicista,2,outros,auto
+Q16312408,etimólogo,2,outros,auto
+Q16742175,espeleólogo,2,outros,auto
+Q16868721,carcinólogo,2,outros,auto
+Q17345122,urologista,2,outros,auto
+Q17351648,editor de jornal,2,literatura,auto
+Q17362882,surfista de bodyboard,2,esporte,auto
+Q173950,agenciador de obras de arte,2,outros,auto
+Q17484288,etnomusicólogo,2,ciencia_academia,auto
+Q17598791,latinista,2,outros,auto
+Q1797162,diretor artístico,2,artes_visuais,auto
+Q18245236,radiologista,2,outros,auto
+Q183888,desenvolvedor de software,2,outros,auto
+Q18524075,engenheiro de minas,2,ciencia_academia,auto
+Q18534714,arremessador de peso,2,outros,auto
+Q18617021,freestyle skier,2,outros,auto
+Q189010,notário,2,outros,auto
+Q18921227,ufólogo,2,outros,auto
+Q18964326,senador do Brasil,2,politica,auto
+Q19100,capitão,2,outros,auto
+Q19261760,trabalhador rural,2,outros,auto
+Q1934684,dono de casa,2,outros,auto
+Q19799599,mountain biker,2,outros,auto
+Q19827218,ultramaratonista,2,esporte,auto
+Q19829990,biblista,2,outros,auto
+Q19842026,cirurgião cardiovascular,2,ciencia_academia,auto
+Q20085212,senhor de engenho,2,outros,auto
+Q20198542,historiador da música,2,ciencia_academia,auto
+Q203184,primeira-dama,2,politica,auto
+Q2079935,relator de parecer,2,outros,auto
+Q21002336,engenheiro nuclear,2,ciencia_academia,auto
+Q2101758,police commissioner,2,outros,auto
+Q21166956,tocador de alaúde,2,outros,auto
+Q215279,freelancer,2,outros,auto
+Q215793,mestre de capela,2,outros,auto
+Q21600439,pintor de paisagens,2,artes_visuais,auto
+Q2205972,vitralista,2,outros,auto
+Q22976182,television journalist,2,outros,auto
+Q23024064,spiritualist,2,outros,auto
+Q23038345,wikipedista,2,outros,auto
+Q23835475,ajudante,2,outros,auto
+Q2384039,criminoso contumaz,2,outros,auto
+Q2393361,professor de dança,2,ciencia_academia,auto
+Q24041571,Inspetor tributário,2,outros,auto
+Q242468,alfaiate,2,outros,auto
+Q2487799,micologista,2,outros,auto
+Q2489809,ilustrador de fantasia,2,artes_visuais,auto
+Q2500638,criador,2,outros,auto
+Q25420150,Auditor-Fiscal da Receita Federal do Brasil,2,outros,auto
+Q2599593,Germanist,2,outros,auto
+Q2743689,Leiloeiro,2,outros,auto
+Q27572266,médico tropical,2,ciencia_academia,auto
+Q28107590,artista de conceito,2,artes_visuais,auto
+Q285759,corretor de seguros,2,outros,auto
+Q2860259,arquiteto naval,2,artes_visuais,auto
+Q2865798,mestre vidreiro,2,outros,auto
+Q28837,anestesiologista,2,outros,auto
+Q2920595,sexologista,2,outros,auto
+Q294126,agrimensor,2,outros,auto
+Q30176225,Enxadrista epistolar,2,esporte,auto
+Q30525637,beach tennis player,2,outros,auto
+Q3089940,executivo de música,2,musica,auto
+Q3144914,hematologista,2,outros,auto
+Q3178518,vedete,2,atuacao_tv,auto
+Q327321,pedreiro,2,outros,auto
+Q3286049,modelo plus-size,2,atuacao_tv,auto
+Q3303330,calígrafo,2,outros,auto
+Q3332711,medievalista,2,outros,auto
+Q336221,joalheiro,2,outros,auto
+Q3579035,escritor de viagens,2,literatura,auto
+Q38126150,dona de casa,2,outros,auto
+Q4070300,ballerina,2,outros,auto
+Q42178,vice-presidente,2,outros,auto
+Q475604,piloto de navio,2,esporte,auto
+Q477406,regente,2,musica,auto
+Q484275,liderança,2,outros,auto
+Q48629921,arcebispo católico,2,religiao,auto
+Q48942,aluno,2,outros,auto
+Q508846,caminhoneiro,2,outros,auto
+Q5090503,tecnólogo em processos químicos,2,ciencia_academia,auto
+Q5358395,electronic musician,2,outros,auto
+Q53739375,governador do Piauí,2,politica,auto
+Q55631411,religiosa católica,2,religiao,auto
+Q5770349,cirurgião plástico,2,ciencia_academia,auto
+Q58209937,professor de história,2,ciencia_academia,auto
+Q58487031,datilógrafo,2,outros,auto
+Q60056736,Procurador da República,2,politica,auto
+Q60155886,landscape contractor,2,outros,auto
+Q609016,preceptor,2,outros,auto
+Q61048378,ativista do clima,2,politica,auto
+Q618694,piloto militar,2,politica,auto
+Q61946839,jazz drummer,2,outros,auto
+Q62933979,líder ameríndio,2,outros,auto
+Q63179158,engenheira(o) de alimentos,2,ciencia_academia,auto
+Q63677188,professor de direito,2,ciencia_academia,auto
+Q6386271,media scholar,2,outros,auto
+Q64711780,líder espiritual,2,outros,auto
+Q64786177,técnico agrícola,2,outros,auto
+Q6500773,médico de família,2,ciencia_academia,auto
+Q664283,vidraceiro,2,outros,auto
+Q66763708,country singer,2,outros,auto
+Q67378332,rock guitarist,2,outros,auto
+Q683754,desenhista,2,artes_visuais,auto
+Q6884071,mixing engineer,2,outros,auto
+Q7016454,new media artist,2,outros,auto
+Q728425,balonista,2,outros,auto
+Q736559,Secretária(o) de Estado,2,outros,auto
+Q74852689,torneiro mecânico,2,outros,auto
+Q762121,treinador pessoal,2,esporte,auto
+Q779815,diretor de animação,2,artes_visuais,auto
+Q806717,bank officer,2,outros,auto
+Q811122,operário da construção civil,2,outros,auto
+Q8178443,libretista,2,outros,auto
+Q83634378,radio playwright,2,outros,auto
+Q849424,Capitão da marinha mercante,2,outros,auto
+Q853982,bispo-coadjutor,2,religiao,auto
+Q8563456,Preparador físico,2,ciencia_academia,auto
+Q901192,guitarrista solo,2,musica,auto
+Q931260,assassino,2,outros,auto
+Q9385011,neurocirugião,2,outros,auto
+Q942569,analista de sistemas,2,outros,auto
+Q943995,intendente,2,outros,auto
+Q948657,Bispo-titular,2,religiao,auto
+Q9643535,baiana de acarajé,2,outros,auto
+Q97722145,monge católico romano,2,religiao,auto
+Q98833914,union member,2,outros,auto
+Q1004,história em quadrinhos,1,outros,auto
+Q101084010,folk musician,1,outros,auto
+Q101444631,professor de inglês,1,ciencia_academia,auto
+Q101445634,science teacher,1,outros,auto
+Q101539,comissário de bordo,1,outros,auto
+Q1021386,civil rights advocate,1,outros,auto
+Q10264828,Delegado,1,politica,auto
+Q10271104,Ekedi,1,outros,auto
+Q10297252,crime fiction writer,1,outros,auto
+Q10304517,Iyaefun,1,outros,auto
+Q10312792,juiz de fora,1,politica,auto
+Q10312794,juiz eleitoral,1,politica,auto
+Q10323453,Mameto de inquice,1,outros,auto
+Q10341785,orquidófilo,1,outros,auto
+Q10343696,pajé,1,outros,auto
+Q10365511,rábula,1,outros,auto
+Q103815244,ministro do Tribunal Superior do Trabalho,1,politica,auto
+Q103893954,Arquiteto de interiores,1,artes_visuais,auto
+Q104176943,military scientist,1,politica,auto
+Q10429346,bibliógrafo,1,outros,auto
+Q1044528,vigário-geral,1,outros,auto
+Q1049637,motoboy,1,outros,auto
+Q1050142,catador de material reciclável,1,outros,auto
+Q10509151,professor primário,1,ciencia_academia,auto
+Q1051805,cavaquinho,1,outros,auto
+Q10527030,humanista,1,outros,auto
+Q105543609,obra ou composição musical,1,outros,auto
+Q105572010,political economist,1,outros,auto
+Q105650,urologia,1,outros,auto
+Q105652947,soul musician,1,outros,auto
+Q105755601,chamber musician,1,outros,auto
+Q105826332,Secretário,1,outros,auto
+Q106252738,public relations consultant,1,outros,auto
+Q106651242,woman conductor,1,outros,auto
+Q106651942,Calundu,1,outros,auto
+Q10691728,Intérprete de linguagem gestual,1,outros,auto
+Q107070290,team manager,1,outros,auto
+Q1072363,Chief Officer,1,outros,auto
+Q107288106,geographic information scientist,1,outros,auto
+Q107736950,mental health advocate,1,outros,auto
+Q107789510,freestyler footballer,1,outros,auto
+Q10816969,club DJ,1,musica,auto
+Q108333755,music publicist,1,outros,auto
+Q108482633,handcyclist,1,outros,auto
+Q10862983,aquafortista,1,outros,auto
+Q108886510,piloto de BMX,1,esporte,auto
+Q108897110,holographer,1,outros,auto
+Q1104185,mentoria,1,outros,auto
+Q11051391,envoy extraordinary and minister plenipotentiary,1,outros,auto
+Q110775470,Director of Alliance Française,1,outros,auto
+Q110829594,classical cellist,1,outros,auto
+Q110896478,Empresário,1,outros,auto
+Q110990999,Instagrammer,1,outros,auto
+Q110996210,engineering teacher,1,outros,auto
+Q111213128,Diretor de Bateria,1,artes_visuais,auto
+Q1113838,climatologista,1,outros,auto
+Q11163999,literatura infantojuvenil,1,literatura,auto
+Q111837,Marechal,1,outros,auto
+Q112305036,Lider Indigena,1,outros,auto
+Q1124183,lenhador,1,outros,auto
+Q11325221,Manicuro,1,outros,auto
+Q113950465,multi-artista,1,artes_visuais,auto
+Q1141526,stripper,1,outros,auto
+Q1146749,Rei Momo,1,outros,auto
+Q11479517,artesão,1,artes_visuais,auto
+Q11545923,comandante militar,1,politica,auto
+Q1155838,jornalista correspondente,1,jornalismo_comunicacao,auto
+Q11573524,diretor,1,artes_visuais,auto
+Q115784320,Vencedor do Prêmio Nobel,1,outros,auto
+Q116245400,agroecologist,1,outros,auto
+Q11631,astronauta,1,outros,auto
+Q116695160,video game actor,1,outros,auto
+Q116879247,ministro adventista do sétimo dia,1,politica,auto
+Q116994205,geodesista,1,outros,auto
+Q11703711,assistant coach,1,outros,auto
+Q117039165,Christian missionary,1,outros,auto
+Q11762416,fonoaudiólogo,1,outros,auto
+Q11827459,vice-reitor,1,outros,auto
+Q1200828,supercentenário,1,outros,auto
+Q120122399,Minecraft YouTuber,1,jornalismo_comunicacao,auto
+Q12020057,homeopata,1,outros,auto
+Q12051314,sismólogo,1,outros,auto
+Q120868904,teqball player,1,outros,auto
+Q1210069,gerente-geral,1,outros,auto
+Q121176,enfermagem,1,outros,auto
+Q121867984,mestre-sala,1,outros,auto
+Q122421900,mestre capoeirista,1,esporte,auto
+Q1227195,economista,1,ciencia_academia,auto
+Q12299841,jogador de críquete,1,esporte,auto
+Q12307965,polemista,1,outros,auto
+Q12310971,bassoonist,1,outros,auto
+Q123573929,Seven-a-side footballer,1,outros,auto
+Q12360779,demógrafo,1,outros,auto
+Q12368980,fotógrafo de natureza,1,artes_visuais,auto
+Q12372582,dono de uma plantação,1,outros,auto
+Q123851660,imitação feminina,1,outros,auto
+Q1240788,supervisor,1,outros,auto
+Q12414919,terrorista,1,outros,auto
+Q12470043,Champ Car driver,1,outros,auto
+Q125129579,brand strategist,1,outros,auto
+Q125251105,teorista de gênero,1,outros,auto
+Q125256399,music manager,1,outros,auto
+Q126912755,performista drag,1,atuacao_tv,auto
+Q12797895,ocultista,1,outros,auto
+Q1300660,presidente de honra,1,outros,auto
+Q131572781,radio employee,1,outros,auto
+Q1320047,editora de livros,1,literatura,auto
+Q13365770,gravador em placa de cobre,1,artes_visuais,auto
+Q133744,operadora turística,1,outros,auto
+Q13388442,skeleton racer,1,outros,auto
+Q13388586,softball player,1,outros,auto
+Q13424456,autor de hinos,1,literatura,auto
+Q134304530,film programmer,1,outros,auto
+Q1344452,descobridor,1,outros,auto
+Q1344569,Ator de Pegadinhas,1,atuacao_tv,auto
+Q134544910,wood sculptor,1,outros,auto
+Q135247903,Ukrainian–German translator,1,outros,auto
+Q135981740,pin-up-artist,1,outros,auto
+Q136374172,ophicleidist,1,outros,auto
+Q136746,cospe-fogo,1,outros,auto
+Q1371914,solista,1,outros,auto
+Q13724897,barreirista,1,outros,auto
+Q139379879,plasma physicist,1,outros,auto
+Q139564118,motorcycle road racer,1,outros,auto
+Q139627,Coroinha,1,outros,auto
+Q1399157,parish priest,1,outros,auto
+Q1404030,mafioso,1,outros,auto
+Q140424937,Mineral dealer,1,outros,auto
+Q1413170,encadernador,1,outros,auto
+Q1413522,impostor,1,outros,auto
+Q1414937,combatente,1,outros,auto
+Q1417439,shop assistant,1,outros,auto
+Q1419997,organizador,1,outros,auto
+Q1430683,mecânico de manutenção de aeronaves,1,outros,auto
+Q14466416,copywriter,1,outros,auto
+Q14565186,cientista cognitivo,1,ciencia_academia,auto
+Q1499034,spiritual,1,outros,auto
+Q1500610,líder comunitário(a),1,outros,auto
+Q1501800,diretor-geral,1,artes_visuais,auto
+Q1509440,bordadeira,1,outros,auto
+Q15265344,difusora,1,outros,auto
+Q15432439,garden designer,1,artes_visuais,auto
+Q15442776,criptógrafo,1,outros,auto
+Q154549,carpinteiro,1,outros,auto
+Q1553239,Guerrilha do Araguaia,1,outros,auto
+Q15618890,ventríloquo,1,outros,auto
+Q15623737,glaciólogo,1,outros,auto
+Q1567545,rōshi,1,outros,auto
+Q1572493,pedagogia social,1,ciencia_academia,auto
+Q157696,sargento,1,outros,auto
+Q15839136,cell biologist,1,outros,auto
+Q158950,suboficial,1,politica,auto
+Q15931838,jornalista investigativo,1,jornalismo_comunicacao,auto
+Q15941468,cientista forense,1,ciencia_academia,auto
+Q15966504,cantor infantil,1,musica,auto
+Q15980591,operário metalúrgico,1,outros,auto
+Q15983773,peão,1,outros,auto
+Q16004471,canoísta,1,esporte,auto
+Q16012028,erudito jurídico,1,outros,auto
+Q160131,padeiro,1,outros,auto
+Q16030727,orthopedic surgeon,1,outros,auto
+Q16063497,biólogo evolutivo,1,ciencia_academia,auto
+Q16063546,historiador da ciência,1,ciencia_academia,auto
+Q16185210,consultor político,1,politica,auto
+Q161944,diácono,1,religiao,auto
+Q16204670,quilombola,1,outros,auto
+Q16245517,Chartered Building Surveyor,1,outros,auto
+Q16254673,pamphleteer,1,outros,auto
+Q16267607,filólogo clássico,1,ciencia_academia,auto
+Q16271428,embriologista,1,outros,auto
+Q16314501,enciclopedista,1,outros,auto
+Q16323111,ativista antiguerra,1,politica,auto
+Q16334430,latino-americanista,1,outros,auto
+Q16335312,geoquímico,1,ciencia_academia,auto
+Q16390131,criptólogo,1,outros,auto
+Q1639825,ferreiro,1,outros,auto
+Q164236,correspondente de guerra,1,outros,auto
+Q165503,barão,1,outros,auto
+Q16611574,reformador social,1,outros,auto
+Q16614000,terapeuta sexual,1,outros,auto
+Q16727193,humanities scholar,1,outros,auto
+Q16743941,metafísico,1,ciencia_academia,auto
+Q16750,Maconge,1,outros,auto
+Q16827718,confessor,1,outros,auto
+Q16849727,consultor de negócios,1,outros,auto
+Q16856551,paramedic,1,outros,auto
+Q16880249,dialetólogo,1,outros,auto
+Q16949864,Macologist,1,outros,auto
+Q17083482,student leader,1,outros,auto
+Q1709010,engenheiro de software,1,ciencia_academia,auto
+Q17132038,paleógrafo,1,outros,auto
+Q17166634,hagiógrafo,1,outros,auto
+Q17176618,contrabandista,1,outros,auto
+Q17221,porta-voz,1,outros,auto
+Q17318006,freediver,1,outros,auto
+Q17379560,impersonator,1,outros,auto
+Q17391605,teórico de cinema,1,outros,auto
+Q17391654,crítico de arquitetura,1,literatura,auto
+Q1742253,cinema owner,1,outros,auto
+Q1743189,pintor de igrejas,1,artes_visuais,auto
+Q1748406,hóquei em patins,1,outros,auto
+Q17486330,historiador da matemática,1,ciencia_academia,auto
+Q17488316,pré-historiador,1,ciencia_academia,auto
+Q178197,Mercenário,1,outros,auto
+Q178521,vaqueiro,1,outros,auto
+Q1793097,cardinal of the Roman Curia,1,outros,auto
+Q18176235,governador do Paraná,1,politica,auto
+Q18176446,governador de Sergipe,1,politica,auto
+Q1823479,designer de iluminação,1,artes_visuais,auto
+Q183318,ditador,1,outros,auto
+Q18340078,tamer,1,outros,auto
+Q1840507,carver,1,outros,auto
+Q18437198,jogador de bridge,1,esporte,auto
+Q18611810,designer têxtil,1,artes_visuais,auto
+Q18617002,criador de bonecos,1,outros,auto
+Q1862087,prisioneiro,1,outros,auto
+Q186370,trovador,1,outros,auto
+Q18663426,topologista,1,outros,auto
+Q18810049,cosplayer,1,outros,auto
+Q18810130,television critic,1,outros,auto
+Q18814798,wheelchair tennis player,1,outros,auto
+Q18930007,filósofo político,1,politica,auto
+Q18931911,teórico,1,outros,auto
+Q189829,eremita,1,outros,auto
+Q1898495,navy sailor,1,outros,auto
+Q1900167,psicoterapeuta,1,outros,auto
+Q1900657,marketer,1,outros,auto
+Q191421,lama,1,outros,auto
+Q191633,mangaká,1,outros,auto
+Q193364,vigário,1,outros,auto
+Q1937431,construtor de órgãos,1,outros,auto
+Q19377727,engenheira(o) ambiental,1,ciencia_academia,auto
+Q19382184,marceneiro,1,outros,auto
+Q1939892,radioamador,1,outros,auto
+Q19507792,ilustrador científico,1,artes_visuais,auto
+Q1955150,fabricante de instrumentos musicais,1,outros,auto
+Q195651,ascensorista,1,outros,auto
+Q19698265,fotógrafo de moda,1,artes_visuais,auto
+Q1979607,financista,1,outros,auto
+Q19798999,acarologist,1,outros,auto
+Q19829980,cientista da religião,1,ciencia_academia,auto
+Q19831149,teórico da conspiração,1,outros,auto
+Q19890746,ciberativista,1,politica,auto
+Q20020377,cultural critic,1,outros,auto
+Q201257,vigário episcopal,1,outros,auto
+Q203658,catador,1,outros,auto
+Q2043282,administração de empresas,1,outros,auto
+Q2046313,radiation therapist,1,outros,auto
+Q20481199,coordenador,1,outros,auto
+Q2058873,slam poet,1,literatura,auto
+Q206882,polícias civis do Brasil,1,outros,auto
+Q20730881,treinador de voleibol,1,esporte,auto
+Q2085381,editora,1,literatura,auto
+Q20900796,jogador de hóquei em patins,1,esporte,auto
+Q20956402,líder de seita,1,outros,auto
+Q21002343,engenheiro de petróleo,1,ciencia_academia,auto
+Q21002422,ginecologista-obstetra,1,outros,auto
+Q21244999,cientista florestal,1,ciencia_academia,auto
+Q21281706,administrador acadêmico,1,ciencia_academia,auto
+Q2133309,designer de interiores,1,artes_visuais,auto
+Q2135538,historiador jurídico,1,ciencia_academia,auto
+Q2137435,Q2137435,1,outros,auto
+Q21509814,grupo ativista,1,politica,auto
+Q21550346,estético,1,outros,auto
+Q216541,chofer,1,outros,auto
+Q21680731,compositor de ópera,1,musica,auto
+Q21888039,taifeiro,1,outros,auto
+Q220364,zootecnista,1,outros,auto
+Q22082717,eugenista,1,outros,auto
+Q22201031,rodeo announcer,1,outros,auto
+Q222836,editor de música,1,musica,auto
+Q2229544,árbitro de xadrez,1,esporte,auto
+Q222982,ás da aviação,1,outros,auto
+Q22298829,forensic psychiatrist,1,outros,auto
+Q22343421,narrator,1,outros,auto
+Q22343478,collagist,1,outros,auto
+Q22669155,pintor de afrescos,1,artes_visuais,auto
+Q22813360,cartomante,1,outros,auto
+Q2291067,Força Expedicionária Brasileira,1,outros,auto
+Q22962951,violador,1,outros,auto
+Q2296367,superintendent,1,outros,auto
+Q23037330,reciter,1,outros,auto
+Q2309900,timoneiro,1,outros,auto
+Q2310145,meteorologista,1,outros,auto
+Q23308797,wakeboarder,1,outros,auto
+Q2358549,press agent,1,outros,auto
+Q23838068,tabelião,1,outros,auto
+Q23901032,Hebrew Bible scholar,1,outros,auto
+Q24266767,newspaper proprietor,1,outros,auto
+Q2442329,técnico de áudio,1,outros,auto
+Q2445218,treinador de goleiros,1,esporte,auto
+Q2468727,erudito clássico,1,outros,auto
+Q24702769,repórter de rádio,1,jornalismo_comunicacao,auto
+Q24885626,pensador,1,outros,auto
+Q2505739,hispanista,1,outros,auto
+Q2516852,editor literário,1,literatura,auto
+Q2518689,curandeiro(a),1,outros,auto
+Q253567,aprendiz,1,outros,auto
+Q2540029,polícias militares do Brasil,1,politica,auto
+Q25439646,técnico em eletroeletrônica,1,outros,auto
+Q2544530,fotógrafo de retratos,1,artes_visuais,auto
+Q25447215,Rizia,1,outros,auto
+Q254508,fora-da-lei,1,outros,auto
+Q26111624,paraglider pilot,1,outros,auto
+Q26203274,traumátologo,1,outros,auto
+Q264323,camareiro,1,outros,auto
+Q26492001,faith healer,1,outros,auto
+Q2664701,jurisconsulto,1,outros,auto
+Q26876991,patinador de velocidade em linha,1,outros,auto
+Q26973007,professor(a) de filosofia,1,ciencia_academia,auto
+Q270141,polímata,1,outros,auto
+Q2737906,Videasta,1,outros,auto
+Q27443,Caçador-coletor,1,outros,auto
+Q27472738,artista de capa,1,artes_visuais,auto
+Q27496075,idista,1,outros,auto
+Q2752427,pesquisa médica,1,outros,auto
+Q27939,canto,1,outros,auto
+Q27947380,engenheiro metalúrgico,1,ciencia_academia,auto
+Q28008159,fashion blogger,1,outros,auto
+Q281795,dourador,1,outros,auto
+Q2828885,fitter,1,outros,auto
+Q28344495,consultor de segurança informática,1,outros,auto
+Q28378128,pedologue,1,outros,auto
+Q28466513,ministro do Supremo Tribunal Federal,1,politica,auto
+Q28532974,community organizer,1,outros,auto
+Q2868277,sócio,1,outros,auto
+Q28692568,professor convidado,1,ciencia_academia,auto
+Q28732658,radio commentator,1,outros,auto
+Q28790169,desempregado,1,outros,auto
+Q2883465,banqueiro de investimento,1,outros,auto
+Q288728,pintor,1,artes_visuais,auto
+Q28933278,book designer,1,artes_visuais,auto
+Q29169143,cientista de dados,1,ciencia_academia,auto
+Q29182003,professor de matemática,1,ciencia_academia,auto
+Q29325697,pessoa sem teto,1,outros,auto
+Q29352392,spiritual teacher,1,outros,auto
+Q2986262,comerciário,1,outros,auto
+Q29881694,alternative therapist,1,outros,auto
+Q2992505,confeiteiro,1,outros,auto
+Q2995513,historiador contemporâneo,1,ciencia_academia,auto
+Q30081331,embaixador do Brasil,1,outros,auto
+Q30086937,pesquisador do cancro,1,ciencia_academia,auto
+Q30093123,pesquisador,1,ciencia_academia,auto
+Q3061999,exobiólogo,1,ciencia_academia,auto
+Q3074722,flautista,1,musica,auto
+Q30892161,sports promoter,1,outros,auto
+Q3127709,harpista,1,outros,auto
+Q3148760,ilustrador botânico,1,ciencia_academia,auto
+Q315247,estudante universitário,1,outros,auto
+Q3153784,presidente interino,1,outros,auto
+Q3154693,legislativo municipal,1,outros,auto
+Q3190387,justiceiro,1,outros,auto
+Q3191582,artista de jogos eletrônicos,1,artes_visuais,auto
+Q319544,secretário,1,outros,auto
+Q323081,poliglota,1,outros,auto
+Q3237618,estilista de moda,1,artes_visuais,auto
+Q3246315,head coach,1,outros,auto
+Q329455,juiz de paz,1,politica,auto
+Q32947888,gestor bancário,1,outros,auto
+Q329737,açougueiro,1,outros,auto
+Q32999759,euphoniumist,1,outros,auto
+Q33112416,agrostólogo,1,outros,auto
+Q33123562,land artist,1,outros,auto
+Q33135515,boules player,1,outros,auto
+Q331432,pescador,1,outros,auto
+Q3368517,Public prosecutor general,1,politica,auto
+Q3381571,artista fotográfico,1,artes_visuais,auto
+Q3476620,escritor de jogos eletrônicos,1,literatura,auto
+Q3477182,Segunda-dama,1,outros,auto
+Q3479990,chaveiro,1,outros,auto
+Q352388,motorista,1,outros,auto
+Q354034,criador tipográfico,1,outros,auto
+Q355493,músico de igreja,1,musica,auto
+Q3555589,camelô,1,outros,auto
+Q357813,professor(a) adjunto(a),1,ciencia_academia,auto
+Q3580098,specialized educator,1,outros,auto
+Q3606216,aforista,1,outros,auto
+Q361593,policial,1,politica,auto
+Q3640160,biólogo marinho,1,ciencia_academia,auto
+Q3708947,Diretor,1,artes_visuais,auto
+Q3744886,figurinista,1,artes_visuais,auto
+Q3746192,phytopathologist,1,outros,auto
+Q3798487,military nurse,1,politica,auto
+Q38142,samurai,1,outros,auto
+Q38239859,oficial do exército,1,politica,auto
+Q39020112,Theaterintendant,1,outros,auto
+Q4009363,velina,1,outros,auto
+Q4087517,Beatmaker,1,musica,auto
+Q408832,airman,1,outros,auto
+Q41546637,wikimedista,1,outros,auto
+Q416718,andarilho,1,outros,auto
+Q41674,webmaster,1,outros,auto
+Q4197743,jogador,1,esporte,auto
+Q42182030,negador do holocausto,1,outros,auto
+Q42297530,orador principal,1,outros,auto
+Q42331265,gymnastics coach,1,outros,auto
+Q42857,profeta,1,outros,auto
+Q43184282,paisagista,1,artes_visuais,auto
+Q43412,Apóstolo,1,outros,auto
+Q435940,padre,1,religiao,auto
+Q43682214,cristão místico,1,outros,auto
+Q437512,tecelão,1,outros,auto
+Q450202,fabricante de violão,1,outros,auto
+Q45322469,basquetebolista em cadeira de rodas,1,esporte,auto
+Q4539,cooperativismo,1,outros,auto
+Q45684,Direção espiritual,1,outros,auto
+Q45916489,environmental consultant,1,outros,auto
+Q45922768,railway entrepreneur,1,outros,auto
+Q4618,carnaval,1,outros,auto
+Q4657217,municipal executive,1,outros,auto
+Q46872,cinematógrafo,1,outros,auto
+Q46961,Gângster,1,outros,auto
+Q47005195,xilógrafo,1,outros,auto
+Q47005753,Senador,1,politica,auto
+Q4736532,alternative model,1,outros,auto
+Q47492700,theatre maker,1,outros,auto
+Q4795852,arranger,1,outros,auto
+Q4830453,negócio,1,outros,auto
+Q4839644,background artist,1,outros,auto
+Q485178,analista,1,outros,auto
+Q48705382,syndicalist,1,outros,auto
+Q4885522,Diretor comercial,1,artes_visuais,auto
+Q48930480,professor(a) de filosofia,1,ciencia_academia,auto
+Q48995718,general music director,1,politica,auto
+Q491656,faquir,1,outros,auto
+Q4958878,Nobreza do Império do Brasil,1,outros,auto
+Q4958928,Brasilianista,1,outros,auto
+Q4988856,Hebraísta,1,outros,auto
+Q500251,armador,1,outros,auto
+Q5024685,calypsonian,1,outros,auto
+Q50259293,inline skater,1,esporte,auto
+Q50280805,Criador de Machinima,1,outros,auto
+Q50807995,antiquarian bookseller,1,outros,auto
+Q511054,griot,1,outros,auto
+Q5125402,clairvoyant,1,outros,auto
+Q51679083,sitarist,1,outros,auto
+Q5179781,pecuarista bovino,1,outros,auto
+Q519076,agente imobiliário,1,outros,auto
+Q524980,comendador,1,outros,auto
+Q52899051,bioestatístico,1,ciencia_academia,auto
+Q53739360,Governador de Goiás,1,politica,auto
+Q5381330,gestor ambiental,1,outros,auto
+Q53844708,professor of physics,1,ciencia_academia,auto
+Q53864923,deputado estadual de São Paulo,1,politica,auto
+Q53864924,deputado estadual de Minas Gerais,1,politica,auto
+Q53926036,prefeito de Manaus,1,politica,auto
+Q5405633,assistente de pesquisa,1,outros,auto
+Q5428874,membro facultativo,1,outros,auto
+Q5434338,fantasy author,1,outros,auto
+Q544972,trombonista,1,outros,auto
+Q547457,curandeiro(a),1,outros,auto
+Q549322,toureiro,1,outros,auto
+Q552378,carpinteiro,1,outros,auto
+Q55284884,figure skating choreographer,1,esporte,auto
+Q55630100,plantador,1,outros,auto
+Q56113966,engenheira(o) sanitário,1,ciencia_academia,auto
+Q56433160,truck racing driver,1,outros,auto
+Q56447380,funcionário do governo local,1,outros,auto
+Q56449621,prefeito de Osasco,1,politica,auto
+Q5669609,Quitandeira,1,outros,auto
+Q56746433,catch trainer,1,outros,auto
+Q56882269,figure skating judge,1,esporte,auto
+Q56884373,book artist,1,outros,auto
+Q57199189,figure skating coach,1,esporte,auto
+Q579021,perfumista,1,outros,auto
+Q57936775,remixer,1,outros,auto
+Q57997673,Brazilian jiu-jitsu trainer,1,outros,auto
+Q581817,vice-prefeito,1,politica,auto
+Q58287519,desenvolvedor de jogos eletrônicos,1,outros,auto
+Q589298,Editor-chefe,1,literatura,auto
+Q592996,Amtmann,1,outros,auto
+Q59384522,senador do Paraná,1,politica,auto
+Q59401942,deputado federal de Goiás,1,politica,auto
+Q59401951,deputado federal do Paraná,1,politica,auto
+Q594845,permanent deacon,1,outros,auto
+Q5997943,reumatologista,1,outros,auto
+Q6005272,Massagista,1,outros,auto
+Q6060450,paraquedista,1,outros,auto
+Q6102247,diretor de cinema ou televisão,1,artes_visuais,auto
+Q61045547,rhythm guitarist,1,outros,auto
+Q61278580,roller skater,1,esporte,auto
+Q6138343,entalhador,1,outros,auto
+Q61820542,Inspetor tributário,1,outros,auto
+Q618536,candidato,1,outros,auto
+Q61911662,assessor de marketing,1,outros,auto
+Q61947380,jazz pianist,1,outros,auto
+Q619553,apologista,1,outros,auto
+Q61958570,anti-abortion activist,1,outros,auto
+Q61992319,palinologista,1,outros,auto
+Q62056391,wheelchair fencer,1,outros,auto
+Q62082534,assessor parlamentar,1,outros,auto
+Q622807,seiyū,1,outros,auto
+Q63076925,patinadora artística sobre rodas,1,outros,auto
+Q631193,terapeuta ocupacional,1,outros,auto
+Q63146541,dipterologist,1,outros,auto
+Q63170352,No Idea,1,outros,auto
+Q635067,Diretor de programa,1,artes_visuais,auto
+Q63536580,video game composer,1,outros,auto
+Q63952000,gender studies scholar,1,outros,auto
+Q63993638,systems scientist,1,outros,auto
+Q64085211,planter,1,outros,auto
+Q64153444,diretor administrativo,1,artes_visuais,auto
+Q64353861,jazz bassist,1,outros,auto
+Q65054941,bryozoologist,1,outros,auto
+Q651566,higienista,1,outros,auto
+Q65163878,Q65163878,1,outros,auto
+Q65924683,wushu practitioner,1,outros,auto
+Q6607,violão,1,outros,auto
+Q66737909,proprietário de,1,outros,auto
+Q67205775,aparador,1,outros,auto
+Q691031,spalla,1,outros,auto
+Q70380618,children's entertainer,1,outros,auto
+Q7063944,ferroviário,1,outros,auto
+Q706835,mecânico de automóveis,1,outros,auto
+Q71134636,Ortopedista,1,outros,auto
+Q715679,inventor de patentes,1,ciencia_academia,auto
+Q7234157,garoto-propaganda,1,outros,auto
+Q725440,prelado,1,outros,auto
+Q73399344,MC,1,musica,auto
+Q7363,nariz,1,outros,auto
+Q737520,rabeca,1,outros,auto
+Q74093582,funk musician,1,outros,auto
+Q749387,paraquedista militar,1,politica,auto
+Q7501153,lojista,1,outros,auto
+Q75178,bispo-auxiliar,1,religiao,auto
+Q758780,jardineiro,1,outros,auto
+Q7614320,ministro da fazenda,1,politica,auto
+Q762707,Violeiro,1,outros,auto
+Q76928813,biólogo da conservação,1,ciencia_academia,auto
+Q777952,instrutor,1,outros,auto
+Q7834465,diácono transicional,1,religiao,auto
+Q7886765,sindicalista,1,politica,auto
+Q7888495,Permanent Representative to the United Nations,1,outros,auto
+Q79136455,numerologist,1,outros,auto
+Q7940086,vulcanólogo,1,outros,auto
+Q798137,bacharel em Direito,1,outros,auto
+Q798487,vocal de apoio,1,outros,auto
+Q805253,mestre de balé,1,outros,auto
+Q814353,Atleta-guia,1,esporte,auto
+Q816432,gerente de projetos,1,outros,auto
+Q8191099,membro,1,outros,auto
+Q8236,alfabetização,1,outros,auto
+Q8242,literatura,1,literatura,auto
+Q836904,cervejeiro,1,outros,auto
+Q83787307,apontador de obra,1,outros,auto
+Q83788020,gerente de transporte,1,outros,auto
+Q83788030,desenhista mecânico,1,artes_visuais,auto
+Q841594,Reverendo,1,outros,auto
+Q842782,detetive,1,outros,auto
+Q84529235,gráfico,1,outros,auto
+Q84681895,analista político,1,politica,auto
+Q848466,office-boy,1,outros,auto
+Q852389,apicultor,1,outros,auto
+Q854905,monsenhor,1,outros,auto
+Q854979,bica,1,outros,auto
+Q854997,bico,1,outros,auto
+Q85537068,Q85537068,1,outros,auto
+Q8563791,controlador de voo,1,outros,auto
+Q85863506,researcher,1,outros,auto
+Q861197,Varig,1,outros,auto
+Q86702377,jogador de Magic: The Gathering,1,esporte,auto
+Q87004793,pessoa que ocupa este cargo ou posto,1,outros,auto
+Q878295,ladrilheiro,1,outros,auto
+Q88108912,sports psychologist,1,outros,auto
+Q88191594,Para cyclist,1,outros,auto
+Q88372589,historical linguist,1,outros,auto
+Q890527,arqueiro,1,esporte,auto
+Q899758,violista,1,outros,auto
+Q90479996,water polo coach,1,outros,auto
+Q916292,escriba,1,outros,auto
+Q920486,direitos indígenas,1,outros,auto
+Q9324064,ruralista,1,outros,auto
+Q9334029,satirico,1,outros,auto
+Q9363889,tradutor literário,1,literatura,auto
+Q936969,babá,1,outros,auto
+Q93878955,cultural entrepreneur,1,outros,auto
+Q94498772,program host,1,outros,auto
+Q956365,Liedermacher,1,outros,auto
+Q96034777,ativista do HIV/AIDS,1,politica,auto
+Q96045115,redator publicitário,1,jornalismo_comunicacao,auto
+Q9654877,Benzedor,1,outros,auto
+Q96694579,internacionalista,1,outros,auto
+Q973658,caudilho,1,outros,auto
+Q978044,executivo,1,outros,auto
+Q983927,major,1,outros,auto
+Q98833883,teólogo protestante,1,religiao,auto
+Q99103140,ministro do Superior Tribunal de Justiça,1,politica,auto
+Q994779,delegado,1,politica,auto
+Q99536263,varejista,1,outros,auto
+Q99543230,early childhood teacher,1,outros,auto
+Q998550,livreiro,1,outros,auto

@@ -1,0 +1,10 @@
+requests==2.34.2
+pandas==3.1.0
+numpy==2.5.4
+matplotlib==3.11.2
+mwparserfromhell==0.7.2
+tabulate==0.10.0
+jupyter==1.1.1
+nbconvert==7.17.2
+nbformat==5.11.1
+ipykernel==7.4.0
