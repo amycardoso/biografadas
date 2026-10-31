@@ -1,11 +1,16 @@
 PY := .venv/bin/python
 JUPYTER := .venv/bin/jupyter
 
-.PHONY: setup populacao populacao-atualizar coleta sentencas criacao notebooks limpar-cache
+.PHONY: setup setup-ml populacao populacao-atualizar coleta sentencas criacao amostra lotes rotulos modelos bertimbau notebooks limpar-cache
 
 setup:
 	python3 -m venv .venv
 	.venv/bin/pip install -r requirements.txt
+
+## Ambiente separado para o BERTimbau (Python 3.12: torch + transformers)
+setup-ml:
+	python3.12 -m venv .venv-ml
+	.venv-ml/bin/pip install -r requirements-ml.txt
 
 ## Etapa 1: população via Wikidata (usa cache em data/raw/ se existir)
 populacao:
@@ -27,10 +32,30 @@ criacao:
 sentencas:
 	cd scripts && ../$(PY) sentencas.py
 
+## Etapa 4: amostra estratificada, lotes para anotação e consolidação dos rótulos
+amostra:
+	cd scripts && ../$(PY) amostra.py
+
+lotes:
+	cd scripts && ../$(PY) lotes.py preparar
+
+rotulos:
+	cd scripts && ../$(PY) lotes.py consolidar
+
+## Baselines (regex, TF-IDF) e avaliação de todos os modelos
+modelos:
+	cd scripts && ../$(PY) modelos.py
+
+## Fine-tuning do BERTimbau (MPS se disponível), seguido da avaliação
+bertimbau:
+	nice -n 10 .venv-ml/bin/python scripts/bertimbau.py
+	cd scripts && ../$(PY) -c "import modelos; modelos.avaliar_todos()"
+
 notebooks:
-	cd scripts && ../$(PY) gerar_notebook_01.py && ../$(PY) gerar_notebook_02.py
+	cd scripts && ../$(PY) gerar_notebook_01.py && ../$(PY) gerar_notebook_02.py && ../$(PY) gerar_notebook_03.py
 	$(JUPYTER) nbconvert --to notebook --execute --inplace notebooks/01_populacao.ipynb
 	$(JUPYTER) nbconvert --to notebook --execute --inplace notebooks/02_coleta.ipynb
+	$(JUPYTER) nbconvert --to notebook --execute --inplace notebooks/03_classificador.ipynb
 
 limpar-cache:
 	rm -rf data/raw data/cache

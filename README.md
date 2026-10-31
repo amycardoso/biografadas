@@ -2,7 +2,7 @@
 
 Como a Wikipédia em português descreve as biografias de **mulheres e homens brasileiros**: quanto do texto trata de casamento, filhos, aparência e de ser "esposa de" alguém, em comparação com obra e carreira, e de que forma isso acontece.
 
-> Status: **etapas 1 (população), 2 (coleta) e 3 (segmentação) concluídas**. As próximas etapas são o classificador de sentenças e a análise.
+> Status: **etapas 1 a 4 concluídas** (população, coleta, segmentação, classificador). Próxima: aplicar o classificador às 1,1 milhão de sentenças e responder às perguntas.
 
 ## Perguntas
 
@@ -62,6 +62,25 @@ Os artigos de mulheres são um pouco mais longos no geral, e a diferença varia 
 
 Entre 2022 e 2023, cerca de 41 a 47% das biografias de brasileiros criadas eram de mulheres. Isso é compatível com campanhas como Women in Red e as editatonas da Wikimedia Brasil, mas ainda não é prova de causa. A pergunta 1 vai cruzar esse dado com o histórico de edições e com as categorias e predefinições de projetos de gênero.
 
+**Classificador de sentenças** ([`notebooks/03_classificador.ipynb`](notebooks/03_classificador.ipynb)): os modelos foram treinados com 3.332 sentenças rotuladas e avaliados num teste fixo de 622 sentenças, de pessoas que não aparecem no treino. A referência é o anotador A, um LLM.
+
+| modelo | macro-F1 | acurácia | κ vs A |
+|---|---:|---:|---:|
+| regex (léxicos de `texto.py`) | 0,34 | 0,52 | 0,34 |
+| TF-IDF + regressão logística | 0,50 | 0,69 | 0,56 |
+| **BERTimbau base, ajustado** | **0,70** | **0,81** | **0,74** |
+| *anotador B (outro LLM, n = 300), como teto* | *0,74* | *0,84* | *0,78* |
+
+F1 do BERTimbau por rótulo (suporte no teste entre parênteses):
+
+| CAR (248) | OUTRO (171) | FAM_DET (106) | GEN (23) | FAM_ORIG (38) | FAM_CAP (25) | APAR (2) | FAM_ID (9) |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 0,88 | 0,79 | 0,83 | 0,84 | 0,61 | 0,60 | 0,67 | **0,36** |
+
+O BERTimbau chega perto da concordância entre os dois anotadores LLM. Ele vai bem em carreira, família como detalhe e marcação de gênero, mas ainda erra em **FAM_ID**, a categoria central da pergunta 2: há só 51 exemplos no total e 9 no teste. Antes de usar o modelo nessa pergunta, é preciso ampliar FAM_ID com mais sentenças de lead que tenham termos de cônjuge e trocar o macro-F1 por intervalos de confiança.
+
+O treino levou cerca de 7 minutos no MPS de um M1 Pro (4 épocas, batch 16, `max_len` 128). A época foi escolhida pelo macro-F1 numa validação separada por pessoa.
+
 Um teste de viabilidade com 600 artigos e um piloto de 200 sentenças rotuladas mostraram duas coisas. Contar palavras de família quase não diferencia mulheres de homens. O que diferencia é a *função* da menção (família como identidade apareceu só em biografias de mulheres) e a marcação de gênero. Por isso o projeto mede a função de cada sentença, e não só a frequência de palavras. No piloto, a precisão do regex foi de 0,66 para família, 0,26 para marcação de gênero e 0,20 para aparência.
 
 ## Como reproduzir
@@ -72,6 +91,10 @@ make populacao    # etapa 1: Wikidata -> data/processed/populacao.csv
 make coleta       # etapa 2: wikitext dos artigos -> data/cache/ (retomável; ~1 h)
 make criacao      # data de criação estimada pelo pageid (~400 requisições)
 make sentencas    # etapa 3: limpeza e segmentação -> data/processed/sentencas.parquet
+make amostra      # etapa 4: amostra estratificada para rotulagem
+make rotulos      # valida e consolida os rótulos dos anotadores
+make modelos      # baselines regex e TF-IDF + avaliação
+make setup-ml && make bertimbau   # fine-tuning do BERTimbau (Python 3.12, MPS)
 make notebooks    # executa os notebooks
 ```
 

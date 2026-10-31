@@ -1,0 +1,44 @@
+{
+ "modelo": "neuralmind/bert-base-portuguese-cased",
+ "config": {
+  "max_len": 128,
+  "batch": 16,
+  "epocas": 4,
+  "lr": 3e-05,
+  "warmup": 0.1,
+  "seed": 13
+ },
+ "dispositivo": "mps",
+ "historico": [
+  {
+   "epoca": 1,
+   "perda": 1.465,
+   "val_macro_f1": 0.511,
+   "segundos": 104
+  },
+  {
+   "epoca": 2,
+   "perda": 0.7758,
+   "val_macro_f1": 0.712,
+   "segundos": 99
+  },
+  {
+   "epoca": 3,
+   "perda": 0.4951,
+   "val_macro_f1": 0.794,
+   "segundos": 99
+  },
+  {
+   "epoca": 4,
+   "perda": 0.3458,
+   "val_macro_f1": 0.769,
+   "segundos": 100
+  }
+ ],
+ "melhor_val_macro_f1": 0.794,
+ "n": {
+  "treino": 3006,
+  "val": 326,
+  "teste": 622
+ }
+}

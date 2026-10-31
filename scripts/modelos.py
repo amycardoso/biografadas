@@ -8,6 +8,7 @@ e as métricas em data/labels/metricas.json.
 Uso: python scripts/modelos.py
 """
 import json
+import re
 
 import numpy as np
 import pandas as pd
@@ -22,7 +23,7 @@ from texto import APARENCIA, CONJUGE, FAMILIA, FILIACAO
 LAB = DATA / "labels"
 PRED = LAB / "predicoes"
 ROTULOS = ["CAR", "FAM_ID", "FAM_DET", "FAM_ORIG", "FAM_CAP", "APAR", "GEN", "OUTRO"]
-GEN_RX = r"\bprimeir[ao] (mulher|homem)|\buma das (poucas|primeiras) mulheres|\bpioneir[ao] entre"
+GEN_RX = re.compile(r"\bprimeir[ao] (mulher|homem)|\buma das (poucas|primeiras) mulheres|\bpioneir[ao] entre", re.I)
 
 
 def carregar():
@@ -34,7 +35,7 @@ def carregar():
 def regex(textos):
     out = []
     for t in textos:
-        if pd.Series([t]).str.contains(GEN_RX, case=False, regex=True)[0]:
+        if GEN_RX.search(t):
             out.append("GEN")
         elif APARENCIA.search(t):
             out.append("APAR")
