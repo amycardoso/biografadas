@@ -2,7 +2,7 @@ PY := .venv/bin/python
 ROTULOS ?= v3
 JUPYTER := .venv/bin/jupyter
 
-.PHONY: setup setup-ml populacao populacao-atualizar coleta sentencas criacao amostra lotes rotulos reforco rotulos-v3 modelos bertimbau inferencia resultados notebooks limpar-cache
+.PHONY: setup setup-ml populacao populacao-atualizar coleta sentencas criacao amostra lotes rotulos reforco rotulos-v3 modelos bertimbau inferencia resultados pagina notebooks limpar-cache
 
 setup:
 	python3 -m venv .venv
@@ -65,6 +65,14 @@ inferencia:
 
 resultados:
 	cd scripts && nice -n 10 ../$(PY) resultados.py
+
+## Página estática (docs/): dados em docs/data/*.json
+pagina:
+	cd scripts && ../$(PY) pagina.py
+
+## Servir a página localmente em http://localhost:8000
+servir:
+	cd docs && python3 -m http.server 8000
 
 notebooks:
 	cd scripts && ../$(PY) gerar_notebook_01.py && ../$(PY) gerar_notebook_02.py && ../$(PY) gerar_notebook_03.py && ../$(PY) gerar_notebook_04.py

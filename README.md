@@ -89,6 +89,10 @@ F1 do BERTimbau v3 por rótulo (suporte no teste entre parênteses):
 
 O treino de cada rodada levou cerca de 7 a 8 minutos no MPS de um M1 Pro (4 épocas, batch 16, `max_len` 128, perda com peso de classe ∝ 1/√frequência). A época foi escolhida pelo macro-F1 numa validação separada por pessoa.
 
+## Página interativa
+
+[`docs/index.html`](docs/index.html) é uma página estática, sem build e sem bibliotecas externas, com os gráficos das perguntas 1 a 5 e a seção **Leads lado a lado**. Nela, a busca por nome mostra as primeiras sentenças de uma biografia destacadas pelo rótulo previsto, e há um botão de exemplo aleatório com filtros. Os dados vêm de `scripts/pagina.py` (`make pagina`). Para ver localmente: `make servir`.
+
 ## Achados principais
 
 Fonte: [`notebooks/04_analises.ipynb`](notebooks/04_analises.ipynb), com as tabelas em [`data/resultados/`](data/resultados/).

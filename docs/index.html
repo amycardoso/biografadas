@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biografadas</title>
+<meta name="description" content="Como a Wikipédia em português descreve mulheres e homens brasileiros: o volume de família é igual, a função é diferente.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23f4efe6'/%3E%3Crect x='3' y='4' width='10' height='2' fill='%23eb6834'/%3E%3Crect x='3' y='8' width='7' height='2' fill='%232a78d6'/%3E%3Crect x='3' y='12' width='9' height='1.4' fill='%2352514e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --fundo: #f4efe6;
+    --papel: #fcfcfb;
+    --tinta: #0b0b0b;
+    --tinta-2: #52514e;
+    --tinta-3: #7a7873;
+    --linha: #d9d3c7;
+    --grade: #e6e1d8;
+    --f: #eb6834;
+    --m: #2a78d6;
+    --c-FAM_ID: #e34948; --c-FAM_ORIG: #1baf7a; --c-FAM_DET: #eda100;
+    --c-FAM_CAP: #6250d6; --c-GEN: #e87ba4; --c-APAR: #008300;
+    --realce: 22%;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --fundo: #121211; --papel: #1a1a19; --tinta: #f0efec; --tinta-2: #c3c2b7; --tinta-3: #94938a;
+      --linha: #34332f; --grade: #2a2a27; --f: #d95926; --m: #3987e5;
+      --c-FAM_ID: #e66767; --c-FAM_ORIG: #199e70; --c-FAM_DET: #c98500;
+      --c-FAM_CAP: #9085e9; --c-GEN: #d55181; --c-APAR: #008300; --realce: 30%;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --fundo: #121211; --papel: #1a1a19; --tinta: #f0efec; --tinta-2: #c3c2b7; --tinta-3: #94938a;
+    --linha: #34332f; --grade: #2a2a27; --f: #d95926; --m: #3987e5;
+    --c-FAM_ID: #e66767; --c-FAM_ORIG: #199e70; --c-FAM_DET: #c98500;
+    --c-FAM_CAP: #9085e9; --c-GEN: #d55181; --c-APAR: #008300; --realce: 30%;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--fundo); color: var(--tinta); font: 400 16px/1.55 "Archivo", system-ui, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 24px 16px 64px; }
+  a { color: inherit; text-underline-offset: 2px; }
+  .topo { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .marca { font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: .78rem; color: var(--tinta-2); }
+  .tema { font: 500 .85rem "Archivo", sans-serif; background: transparent; color: var(--tinta-2); border: 1px solid var(--linha); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+  h1 { font-size: clamp(2rem, 6vw, 3.4rem); font-weight: 800; letter-spacing: -.03em; line-height: 1; margin: 28px 0 14px; }
+  .abre { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(1.1rem, 2.4vw, 1.35rem); line-height: 1.5; max-width: 62ch; margin: 0; }
+  .abre strong { font-weight: 600; }
+  .numeros { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 26px 0 8px; }
+  .num { background: var(--papel); border-radius: 10px; padding: 14px 16px; }
+  .num b { display: block; font-size: 2rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .num span { font-size: .88rem; color: var(--tinta-2); }
+  h2 { font-size: clamp(1.3rem, 3.2vw, 1.7rem); font-weight: 800; letter-spacing: -.02em; margin: 52px 0 6px; line-height: 1.15; }
+  h2 small { display: block; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--tinta-3); margin-bottom: 4px; }
+  .texto { max-width: 66ch; color: var(--tinta-2); margin: 0 0 14px; }
+  .grafico { background: var(--papel); border-radius: 12px; padding: 14px 14px 10px; margin: 12px 0; }
+  .grafico h3 { font-size: 1rem; margin: 0 0 2px; }
+  .grafico .nota { font-size: .84rem; color: var(--tinta-2); margin: 2px 0 6px; }
+  .grafico svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .grafico svg text { fill: var(--tinta-2); font: 400 12px "Archivo", sans-serif; }
+  @media (max-width: 560px) { .grafico svg text { font-size: 11px; } .grafico { padding: 12px 10px 8px; } }
+  .grafico svg .val { fill: var(--tinta); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .grafico svg .eixo { stroke: var(--linha); }
+  .grafico svg .grade { stroke: var(--grade); }
+  .grafico svg .ic { stroke: var(--tinta); stroke-width: 1.3; }
+  .grafico svg .alvo { fill: transparent; cursor: default; }
+  .legenda { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: .84rem; color: var(--tinta-2); margin: 6px 0 0; }
+  .legenda i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 6px; }
+  details.tabela { margin-top: 8px; font-size: .84rem; color: var(--tinta-2); }
+  details.tabela summary { cursor: pointer; }
+  details.tabela table { border-collapse: collapse; margin-top: 6px; font-variant-numeric: tabular-nums; }
+  details.tabela td, details.tabela th { padding: 2px 10px 2px 0; text-align: left; border-bottom: 1px solid var(--grade); }
+  .duas { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 14px; }
+  #tip { position: fixed; pointer-events: none; z-index: 10; background: var(--tinta); color: var(--fundo); font-size: .82rem; padding: 6px 9px; border-radius: 6px; max-width: 260px; opacity: 0; transition: opacity .1s; }
+
+  /* leads */
+  .busca { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; position: relative; }
+  .busca input, .filtros select, .busca button, .filtros button {
+    font: inherit; padding: 9px 12px; border-radius: 8px; border: 1px solid var(--linha); background: var(--papel); color: var(--tinta);
+  }
+  .busca button, .filtros button { cursor: pointer; font-weight: 700; }
+  .sugestoes { position: absolute; top: 100%; left: 0; right: 0; z-index: 5; margin: 4px 0 0; padding: 4px; list-style: none; background: var(--papel); border: 1px solid var(--linha); border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,.12); max-height: 300px; overflow: auto; }
+  .sugestoes li { padding: 7px 10px; border-radius: 6px; cursor: pointer; display: flex; justify-content: space-between; gap: 10px; }
+  .sugestoes li[aria-selected="true"], .sugestoes li:hover { background: var(--grade); }
+  .sugestoes li span { color: var(--tinta-3); font-size: .85rem; white-space: nowrap; }
+  .filtros { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; align-items: center; }
+  .filtros label { font-size: .85rem; color: var(--tinta-2); }
+  .chaves { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 14px 0 6px; font-size: .84rem; color: var(--tinta-2); }
+  .chaves span::before { content: ""; display: inline-block; width: 14px; height: 10px; margin-right: 6px; vertical-align: 0; border-radius: 2px; background: color-mix(in srgb, var(--c) var(--realce), transparent); border-bottom: 2px solid var(--c); }
+  .lado { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 8px; }
+  .lead { background: var(--papel); border-radius: 12px; padding: 16px; position: relative; }
+  .lead header { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 6px; padding-right: 22px; }
+  .lead h3 { margin: 0; font-size: 1.1rem; }
+  .lead .meta { font-size: .8rem; color: var(--tinta-3); white-space: nowrap; }
+  .lead .sexo { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
+  .lead p { font-family: "Source Serif 4", Georgia, serif; font-size: 1.02rem; line-height: 1.6; margin: 0; }
+  .lead mark { color: inherit; background: color-mix(in srgb, var(--c) var(--realce), transparent); border-bottom: 2px solid var(--c); padding: 0 1px; border-radius: 2px; }
+  .lead mark sup { font: 700 .62rem "Archivo", sans-serif; letter-spacing: .04em; margin-left: 3px; color: var(--tinta-2); text-transform: uppercase; }
+  .lead footer { font-size: .78rem; color: var(--tinta-3); margin-top: 10px; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .lead .fechar { position: absolute; top: 8px; right: 10px; background: none; border: 0; color: var(--tinta-3); font-size: 1.2rem; cursor: pointer; line-height: 1; }
+  .vazio { color: var(--tinta-3); font-size: .9rem; margin: 10px 0; }
+
+  .metodo { background: var(--papel); border-radius: 12px; padding: 4px 18px 10px; }
+  .metodo li { margin: 6px 0; }
+  footer.creditos { margin-top: 40px; font-size: .85rem; color: var(--tinta-2); border-top: 1px solid var(--linha); padding-top: 14px; }
+  @media (max-width: 560px) { .lead header { flex-direction: column; align-items: start; } }
+  @media (forced-colors: active) { .lead mark { border-bottom-style: dashed; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="topo">
+    <span class="marca">Biografadas</span>
+    <button class="tema" id="tema" type="button" aria-label="Alternar tema claro ou escuro">tema</button>
+  </div>
+
+  <h1>Mesma família, outro papel</h1>
+  <p class="abre">Quando a Wikipédia em português fala da vida pessoal de brasileiras e brasileiros, a <strong>quantidade</strong> de casamento e filhos no texto é a mesma. O que muda é a <strong>função</strong>: as mulheres são apresentadas por um parente (“esposa de”, “viúva de”, “mãe de”) com o dobro da frequência dos homens, e o gênero delas vira notícia (“a primeira mulher a…”).</p>
+  <div class="numeros" id="numeros"></div>
+
+  <h2><small>Pergunta 1</small>Quem tem biografia?</h2>
+  <p class="texto">Segundo o Wikidata, 1 em cada 5 biografias de pessoas com cidadania brasileira na Wikipédia em português é de mulher. A fração varia muito por área e cresceu entre os artigos criados nos últimos anos.</p>
+  <div class="duas">
+    <div class="grafico" id="g-q1-area"></div>
+    <div class="grafico" id="g-q1-ano"></div>
+  </div>
+
+  <h2><small>Pergunta 2</small>Identidade emprestada</h2>
+  <p class="texto">Mostra a fração das sentenças do 1º parágrafo que apresentam a pessoa <em>por meio</em> de um parente. A diferença é pequena em termos absolutos, mas sistemática, e se concentra em política.</p>
+  <div class="duas">
+    <div class="grafico" id="g-q2-sexo"></div>
+    <div class="grafico" id="g-volume"></div>
+  </div>
+  <div class="grafico" id="g-q2-area"></div>
+
+  <h2><small>Pergunta 3</small>“A primeira mulher a…”</h2>
+  <p class="texto">Marcar o gênero da pessoa (“primeira mulher a presidir…”, “a única mulher do…”) é quase exclusivo das biografias de mulheres. É mais frequente em política e nas biografias de mulheres de gerações antigas.</p>
+  <div class="grafico" id="g-q3-area"></div>
+  <div class="grafico" id="g-q3-nasc"></div>
+
+  <h2><small>Pergunta 4</small>Família como capital, em política</h2>
+  <p class="texto">Neste caso não há diferença: genealogias como “filho do ex-prefeito…” aparecem nas biografias de políticos dos dois sexos. O que distingue as mulheres em política é a identidade emprestada, não o capital familiar.</p>
+  <div class="grafico" id="g-q4"></div>
+
+  <h2><small>Pergunta 5</small>Os artigos recentes são diferentes?</h2>
+  <p class="texto">A identidade emprestada no lead caiu nos artigos criados mais recentemente, para os dois sexos, mas a diferença entre mulheres e homens persiste. O volume de família como detalhe não difere por sexo em nenhum período.</p>
+  <div class="duas">
+    <div class="grafico" id="g-q5-famid"></div>
+    <div class="grafico" id="g-q5-famdet"></div>
+  </div>
+
+  <h2><small>Explorar</small>Leads lado a lado</h2>
+  <p class="texto">Busque uma biografia ou sorteie um exemplo. As cores indicam o rótulo que o classificador previu para cada sentença das primeiras linhas do artigo. O classificador erra; os erros também são informativos.</p>
+  <div class="busca">
+    <input id="q" type="search" placeholder="Nome (ex.: Ruth Cardoso)" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="sug" aria-label="Buscar biografia por nome">
+    <button id="limpar" type="button">Limpar</button>
+    <ul class="sugestoes" id="sug" role="listbox" hidden></ul>
+  </div>
+  <div class="filtros">
+    <label>Rótulo <select id="f-rot"><option value="">qualquer</option></select></label>
+    <label>Sexo <select id="f-sexo"><option value="">qualquer</option><option value="F">mulheres</option><option value="M">homens</option></select></label>
+    <label>Área <select id="f-area"><option value="">qualquer</option></select></label>
+    <button id="sortear" type="button">Exemplo aleatório</button>
+  </div>
+  <div class="chaves" id="chaves"></div>
+  <div class="lado" id="lado"></div>
+  <p class="vazio" id="info-leads"></p>
+
+  <h2><small>Método</small>Como foi feito, e o que não sabemos</h2>
+  <div class="metodo">
+    <ul>
+      <li><strong>População:</strong> 45.381 pessoas com cidadania brasileira (Wikidata, P27) e artigo na Wikipédia em português, 9.276 delas mulheres, segundo P21. A área vem das ocupações (P106).</li>
+      <li><strong>Texto:</strong> a revisão atual de cada artigo, limpa (sem infobox, tabelas, referências nem listas) e dividida em 1,12 milhão de sentenças. O nome da pessoa é mascarado como [PESSOA], e os pronomes como [PRON].</li>
+      <li><strong>Rótulos:</strong> 4.304 sentenças foram rotuladas por um LLM (subagentes Claude) seguindo um guia de 8 categorias. Um segundo LLM rotulou 300 delas: concordância <strong>κ = 0,87</strong>. <strong>Não houve validação humana.</strong></li>
+      <li><strong>Classificador:</strong> BERTimbau base (neuralmind), ajustado com esses rótulos. No teste fixo (622 sentenças de pessoas fora do treino), o macro-F1 é <strong>0,77</strong> (IC 0,71–0,83). Para família como identidade, o F1 é <strong>0,63</strong> (IC 0,29–0,86), e há <strong>só 10 casos</strong> no teste.</li>
+      <li><strong>Estimativas:</strong> as proporções são médias por pessoa, corrigidas pela precisão do classificador (estimada no teste, ponderada e separada por sexo). Os intervalos de 95% vêm de um bootstrap que reamostra as pessoas e o teste. O ajuste ACC, instável para classes raras, não confirma a diferença em família como identidade. A contagem bruta confirma.</li>
+      <li><strong>Vazamento de gênero:</strong> mesmo com nome e pronomes mascarados, o sexo é dedutível de uma sentença (AUC 0,80, por flexões como “casada” e “atriz”). Os anotadores e o modelo “veem” o gênero.</li>
+      <li><strong>Composição:</strong> algumas cônjuges de políticos aparecem como “político” no Wikidata. Parte do efeito em política vem de <em>quem</em> ganha biografia, não só de <em>como</em> ela é escrita.</li>
+      <li><strong>Data de criação:</strong> interpolada a partir do identificador da página, calibrada com 400 primeiras revisões reais (erro mediano de 1 dia).</li>
+      <li><strong>Leads nesta página:</strong> todas as 5,7 mil biografias com algum rótulo de família, gênero ou aparência nas 4 primeiras sentenças, mais 2,5 mil sorteadas entre as demais. A busca cobre só essa seleção.</li>
+    </ul>
+  </div>
+
+  <footer class="creditos">
+    <p><strong>Textos:</strong> trechos da <a href="https://pt.wikipedia.org/">Wikipédia em português</a>, sob <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br">CC BY-SA 4.0</a>; a autoria de cada trecho está no histórico do artigo (link em cada lead). <strong>Dados:</strong> <a href="https://www.wikidata.org/">Wikidata</a> (CC0). <strong>Modelo:</strong> <a href="https://huggingface.co/neuralmind/bert-base-portuguese-cased">BERTimbau</a> (neuralmind). <strong>Trabalhos anteriores:</strong> Salles &amp; Pappa (2021), <a href="https://sol.sbc.org.br/index.php/brasnam/article/view/16142"><em>Viés de Gênero em Biografias da Wikipédia em Português</em></a>; Wagner et al. (2015, 2016), <em>It’s a Man’s Wikipedia?</em> e <a href="https://doi.org/10.1140/epjds/s13688-016-0066-4"><em>Women through the glass ceiling</em></a>.</p>
+    <p>Código: MIT. Dados derivados: CC BY-SA 4.0. Feito por Amélia Cardoso.</p>
+  </footer>
+</main>
+<div id="tip" role="tooltip"></div>
+
+<script>
+(() => {
+  const NOMES = { CAR: "carreira", FAM_ID: "família como identidade", FAM_DET: "família (detalhe)", FAM_ORIG: "filiação",
+                  FAM_CAP: "família como capital", APAR: "aparência", GEN: "marcação de gênero", OUTRO: "outro" };
+  const CURTO = { FAM_ID: "identidade", FAM_DET: "detalhe", FAM_ORIG: "filiação", FAM_CAP: "capital", APAR: "aparência", GEN: "gênero" };
+  const DESTAQUE = ["FAM_ID", "FAM_ORIG", "FAM_DET", "FAM_CAP", "GEN", "APAR"];
+  const SEXO = { F: "mulheres", M: "homens" };
+  const fmt = (v, d = 1) => v.toLocaleString("pt-BR", { minimumFractionDigits: d, maximumFractionDigits: d });
+  const $ = (s) => document.querySelector(s);
+  const NS = "http://www.w3.org/2000/svg";
+  const el = (tag, attrs = {}, txt) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (txt != null) e.textContent = txt; return e; };
+
+  // ---------- tema
+  const raiz = document.documentElement;
+  const temaBtn = $("#tema");
+  const escuroAtivo = () => raiz.dataset.theme ? raiz.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  const rotuloTema = () => { temaBtn.textContent = escuroAtivo() ? "tema claro" : "tema escuro"; };
+  try { const t = localStorage.getItem("tema"); if (t) raiz.dataset.theme = t; } catch (e) {}
+  rotuloTema();
+  temaBtn.onclick = () => { raiz.dataset.theme = escuroAtivo() ? "light" : "dark"; try { localStorage.setItem("tema", raiz.dataset.theme); } catch (e) {} rotuloTema(); };
+
+  // ---------- tooltip
+  const tip = $("#tip");
+  const mostrar = (ev, html) => { tip.innerHTML = html; tip.style.opacity = 1; mover(ev); };
+  const mover = (ev) => { const x = Math.min(ev.clientX + 14, innerWidth - tip.offsetWidth - 8); tip.style.left = x + "px"; tip.style.top = (ev.clientY + 14) + "px"; };
+  const esconder = () => { tip.style.opacity = 0; };
+  const alvo = (svg, x, y, w, h, html) => {
+    const r = el("rect", { x, y, width: Math.max(w, 1), height: h, class: "alvo", tabindex: 0 });
+    r.addEventListener("pointerenter", (e) => mostrar(e, html)); r.addEventListener("pointermove", mover); r.addEventListener("pointerleave", esconder);
+    r.addEventListener("focus", () => { const b = r.getBoundingClientRect(); mostrar({ clientX: b.right, clientY: b.top }, html); }); r.addEventListener("blur", esconder);
+    svg.appendChild(r);
+  };
+  const ic = (d) => d.lo != null ? ` <span style="opacity:.75">(IC ${fmt(d.lo, 2)}–${fmt(d.hi, 2)})</span>` : "";
+
+  // ---------- componentes
+  function moldura(id, titulo, nota) {
+    const box = document.getElementById(id); box.innerHTML = "";
+    const h = document.createElement("h3"); h.textContent = titulo; box.appendChild(h);
+    if (nota) { const p = document.createElement("p"); p.className = "nota"; p.textContent = nota; box.appendChild(p); }
+    return box;
+  }
+  function legenda(box, itens) {
+    const d = document.createElement("div"); d.className = "legenda";
+    d.innerHTML = itens.map(([nome, cor]) => `<span><i style="background:${cor}"></i>${nome}</span>`).join(""); box.appendChild(d);
+  }
+  function tabela(box, cab, linhas) {
+    const d = document.createElement("details"); d.className = "tabela";
+    d.innerHTML = `<summary>Ver tabela</summary><table><thead><tr>${cab.map((c) => `<th>${c}</th>`).join("")}</tr></thead><tbody>${linhas.map((l) => `<tr>${l.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+    box.appendChild(d);
+  }
+  const pct = (v, d) => fmt(v, d) + "%";
+  // escala "redonda": passo 1, 2, 2,5 ou 5 × 10^k; devolve {max, passo, dec}
+  function escala(maxDado, alvo = 4) {
+    const bruto = (maxDado || 1) / alvo, mag = Math.pow(10, Math.floor(Math.log10(bruto)));
+    const passo = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((v) => v >= bruto);
+    const dec = Math.max(0, -Math.floor(Math.log10(passo)) + (passo / mag === 2.5 ? 1 : 0));
+    return { max: Math.ceil(maxDado / passo) * passo, passo, dec };
+  }
+
+  // barras horizontais; series = [{chave, cor, nome}], cats = rótulos de categoria, get(cat, chave) -> {v, lo, hi}
+  function barrasH(box, cats, series, get, { unidade = "%", dec = 1, larg = 640, rotulo = 120 } = {}) {
+    const linha = series.length > 1 ? 13 : 16, gap = series.length > 1 ? 12 : 8;
+    const altCat = series.length * linha + (series.length - 1) * 2 + gap;
+    const W = Math.max(280, box.clientWidth - 28), x0 = Math.min(rotulo, Math.round(W * 0.36)), x1 = W - 52;
+    const H = cats.length * altCat + 24;
+    const esc = escala(Math.max(...cats.flatMap((c) => series.map((s) => { const d = get(c, s.chave); return d ? (d.hi ?? d.v) : 0; }))));
+    const max = esc.max;
+    const sx = (v) => x0 + (v / max) * (x1 - x0);
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img" });
+    for (let v = 0; v <= max + 1e-9; v += esc.passo) {
+      const x = sx(v);
+      svg.appendChild(el("line", { x1: x, x2: x, y1: 0, y2: H - 18, class: v ? "grade" : "eixo" }));
+      svg.appendChild(el("text", { x, y: H - 4, "text-anchor": "middle" }, fmt(v, esc.dec) + (unidade === "%" ? "%" : "")));
+    }
+    cats.forEach((c, i) => {
+      const y0 = i * altCat + 2;
+      svg.appendChild(el("text", { x: x0 - 8, y: y0 + (series.length * (linha + 2)) / 2 + 3, "text-anchor": "end" }, c));
+      series.forEach((s, k) => {
+        const d = get(c, s.chave); if (!d) return;
+        const y = y0 + k * (linha + 2), w = Math.max(sx(d.v) - x0, 1);
+        svg.appendChild(el("path", { d: `M${x0},${y} h${w - 3} a3,3 0 0 1 3,3 v${linha - 6} a3,3 0 0 1 -3,3 h${-(w - 3)} z`, fill: s.cor }));
+        if (d.lo != null) {
+          const yc = y + linha / 2;
+          svg.appendChild(el("line", { x1: sx(d.lo), x2: sx(d.hi), y1: yc, y2: yc, class: "ic" }));
+          [d.lo, d.hi].forEach((v) => svg.appendChild(el("line", { x1: sx(v), x2: sx(v), y1: yc - 3, y2: yc + 3, class: "ic" })));
+        }
+        svg.appendChild(el("text", { x: sx(d.hi ?? d.v) + 5, y: y + linha / 2 + 4, class: "val" }, fmt(d.v, dec) + (unidade === "%" ? "%" : "")));
+        alvo(svg, x0, y - 1, x1 - x0 + 40, linha + 2, `<b>${c}</b>${s.nome ? " · " + s.nome : ""}<br>${fmt(d.v, dec)}${unidade}${ic(d)}${d.n ? `<br>${d.n.toLocaleString("pt-BR")} pessoas` : ""}`);
+      });
+    });
+    box.appendChild(svg);
+  }
+
+  // linhas com faixa de IC; xs = categorias; series = [{chave, cor, nome, dados: [{x, v, lo, hi}]}]
+  function linhas(box, xs, series, { dec = 2, larg = 460, alt = 230, unidade = "%" } = {}) {
+    const W = Math.max(280, box.clientWidth - 28), H = alt, x0 = 40, x1 = W - 16, y0 = 10, y1 = H - 26;
+    const esc = escala(Math.max(...series.flatMap((s) => s.dados.map((d) => d.hi ?? d.v))));
+    const max = esc.max;
+    const sx = (i) => x0 + (xs.length === 1 ? 0 : (i / (xs.length - 1)) * (x1 - x0));
+    const sy = (v) => y1 - (v / max) * (y1 - y0);
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img" });
+    for (let v = 0; v <= max + 1e-9; v += esc.passo) {
+      const y = sy(v);
+      svg.appendChild(el("line", { x1: x0, x2: x1, y1: y, y2: y, class: v ? "grade" : "eixo" }));
+      svg.appendChild(el("text", { x: x0 - 6, y: y + 4, "text-anchor": "end" }, fmt(v, esc.dec) + (unidade === "%" ? "%" : "")));
+    }
+    const passo = Math.ceil(xs.length / 7);
+    xs.forEach((x, i) => { if (i % passo === 0 || i === xs.length - 1) svg.appendChild(el("text", { x: sx(i), y: H - 6, "text-anchor": "middle" }, x)); });
+    const fins = series.map((s) => { const u = s.dados.filter((d) => xs.includes(d.x)).pop(); return u ? sy(u.v) : 0; });
+    const rotular = series.length > 1 && fins.every((y, i) => fins.every((y2, j) => i === j || Math.abs(y - y2) >= 16));
+    series.forEach((s) => {
+      const pts = xs.map((x, i) => [i, s.dados.find((d) => d.x === x)]).filter((p) => p[1]);
+      if (pts[0] && pts[0][1].lo != null) {
+        const cima = pts.map(([i, d]) => `${sx(i)},${sy(d.hi)}`), baixo = pts.slice().reverse().map(([i, d]) => `${sx(i)},${sy(d.lo)}`);
+        svg.appendChild(el("polygon", { points: cima.concat(baixo).join(" "), fill: s.cor, "fill-opacity": 0.16 }));
+      }
+      svg.appendChild(el("polyline", { points: pts.map(([i, d]) => `${sx(i)},${sy(d.v)}`).join(" "), fill: "none", stroke: s.cor, "stroke-width": 2, "stroke-linejoin": "round" }));
+      pts.forEach(([i, d]) => svg.appendChild(el("circle", { cx: sx(i), cy: sy(d.v), r: 4, fill: s.cor, stroke: "var(--papel)", "stroke-width": 2 })));
+      const [iu, du] = pts[pts.length - 1];
+      if (rotular) svg.appendChild(el("text", { x: Math.min(sx(iu) + 6, x1 - 2), y: sy(du.v) - 8, "text-anchor": "end", class: "val" }, s.nome));
+    });
+    const larguraAlvo = (x1 - x0) / Math.max(xs.length - 1, 1);
+    xs.forEach((x, i) => {
+      const html = `<b>${x}</b><br>` + series.map((s) => { const d = s.dados.find((dd) => dd.x === x); return d ? `${s.nome || ""} ${fmt(d.v, dec)}${unidade}${ic(d)}${d.n ? ` · n=${d.n.toLocaleString("pt-BR")}` : ""}` : ""; }).join("<br>");
+      alvo(svg, sx(i) - larguraAlvo / 2, y0, larguraAlvo, y1 - y0, html);
+    });
+    box.appendChild(svg);
+  }
+
+  const COR = { F: "var(--f)", M: "var(--m)" };
+  const SERIES_FM = [{ chave: "F", cor: COR.F, nome: "mulheres" }, { chave: "M", cor: COR.M, nome: "homens" }];
+  const LEG_FM = [["mulheres", COR.F], ["homens", COR.M]];
+  const busca = (arr, campo) => (cat, sexo) => arr.find((d) => d[campo] === cat && d.sexo === sexo);
+  const tabFM = (box, arr, campo, nomeCampo, dec = 2) => {
+    const cats = [...new Set(arr.map((d) => d[campo]))];
+    tabela(box, [nomeCampo, "mulheres", "IC 95%", "homens", "IC 95%"], cats.map((c) => {
+      const f = arr.find((d) => d[campo] === c && d.sexo === "F"), m = arr.find((d) => d[campo] === c && d.sexo === "M");
+      return [c, f ? pct(f.v, dec) : "—", f ? `${fmt(f.lo, dec)}–${fmt(f.hi, dec)}` : "", m ? pct(m.v, dec) : "—", m ? `${fmt(m.lo, dec)}–${fmt(m.hi, dec)}` : ""];
+    }));
+  };
+
+  let largura = 0;
+  fetch("data/graficos.json").then((r) => r.json()).then((G) => {
+    desenhar(G); largura = innerWidth;
+    let t; addEventListener("resize", () => { clearTimeout(t); t = setTimeout(() => { if (innerWidth !== largura) { largura = innerWidth; desenhar(G); } }, 150); });
+  });
+  function desenhar(G) {
+    // números de abertura
+    const fid = G.q2.lead_sexo, F = fid.find((d) => d.sexo === "F"), M = fid.find((d) => d.sexo === "M");
+    const gen = G.volume.filter((d) => d.rotulo === "GEN"), det = G.volume.filter((d) => d.rotulo === "FAM_DET");
+    const g = (a, s) => a.find((d) => d.sexo === s).v;
+    $("#numeros").innerHTML = [
+      [`${fmt(G.q1.geral, 0)}%`, `das ${G.q1.n.toLocaleString("pt-BR")} biografias de brasileiros são de mulheres`],
+      [`${fmt(g(det, "F"), 1)}% × ${fmt(g(det, "M"), 1)}%`, "das sentenças falam de casamento e filhos (mulheres × homens): igual"],
+      [`${fmt(F.v, 2)}% × ${fmt(M.v, 2)}%`, "das sentenças do lead apresentam a pessoa por um parente"],
+      [`${fmt(g(gen, "F"), 2)}% × ${fmt(g(gen, "M"), 2)}%`, "das sentenças marcam o gênero (“a primeira mulher a…”)"],
+    ].map(([b, s]) => `<div class="num"><b>${b}</b><span>${s}</span></div>`).join("");
+
+    // Q1
+    let box = moldura("g-q1-area", "Mulheres entre as biografias, por área", "% de mulheres entre as pessoas com sexo F ou M no Wikidata");
+    barrasH(box, G.q1.por_area.map((d) => d.area), [{ chave: "x", cor: COR.F, nome: "" }], (c) => G.q1.por_area.find((d) => d.area === c), { larg: 460, rotulo: 96 });
+    tabela(box, ["área", "% mulheres", "pessoas"], G.q1.por_area.map((d) => [d.area, pct(d.v, 1), d.n.toLocaleString("pt-BR")]));
+    box = moldura("g-q1-ano", "Mulheres entre as biografias criadas a cada ano", "Ano de criação estimado pelo identificador da página; anos com ≥ 50 artigos");
+    linhas(box, G.q1.por_ano.map((d) => String(d.ano)), [{ cor: COR.F, nome: "", dados: G.q1.por_ano.map((d) => ({ x: String(d.ano), v: d.v, n: d.n })) }], { dec: 1 });
+    tabela(box, ["ano", "% mulheres", "artigos criados"], G.q1.por_ano.map((d) => [d.ano, pct(d.v, 1), d.n.toLocaleString("pt-BR")]));
+
+    // Q2
+    box = moldura("g-q2-sexo", "Família como identidade no lead", "% das sentenças do 1º parágrafo; média por pessoa, corrigida; barras = IC 95%");
+    barrasH(box, ["lead"], SERIES_FM, (c, s) => fid.find((d) => d.sexo === s), { dec: 2, larg: 460, rotulo: 40 });
+    legenda(box, LEG_FM);
+    const dq = G.q2.dif;
+    const p = document.createElement("p"); p.className = "nota";
+    p.textContent = `Diferença F−M: +${fmt(dq.v, 2)} p.p. (IC ${fmt(dq.lo, 2)} a ${fmt(dq.hi, 2)}); sem stubs: +${fmt(G.q2.dif_sem_stubs.v, 2)} (${fmt(G.q2.dif_sem_stubs.lo, 2)} a ${fmt(G.q2.dif_sem_stubs.hi, 2)}).`;
+    box.appendChild(p);
+    tabela(box, ["método de correção", "dif. F−M (p.p.)", "IC 95%"], G.q2.sens.map((d) => [d.metodo === "precisao" ? "precisão (principal)" : d.metodo === "acc" ? "ACC" : "bruto", fmt(d.v, 2), `${fmt(d.lo, 2)} a ${fmt(d.hi, 2)}`]));
+
+    box = moldura("g-volume", "O volume de família é o mesmo", "% de todas as sentenças, por rótulo; média por pessoa, corrigida");
+    const cats = ["FAM_DET", "FAM_CAP", "FAM_ID", "GEN"];
+    barrasH(box, cats.map((c) => NOMES[c]), SERIES_FM, (c, s) => G.volume.find((d) => NOMES[d.rotulo] === c && d.sexo === s), { dec: 2, larg: 460, rotulo: 150 });
+    legenda(box, LEG_FM);
+    tabFM(box, G.volume.map((d) => ({ ...d, nome: NOMES[d.rotulo] })), "nome", "rótulo");
+
+    box = moldura("g-q2-area", "Família como identidade no lead, por área", "% das sentenças do 1º parágrafo; IC 95%. A diferença só é clara em política, literatura e entre pessoas sem ocupação no Wikidata.");
+    const areas2 = [...new Set(G.q2.por_area.map((d) => d.area))].sort((a, b) => (busca(G.q2.por_area, "area")(b, "F")?.v || 0) - (busca(G.q2.por_area, "area")(a, "F")?.v || 0));
+    barrasH(box, areas2, SERIES_FM, busca(G.q2.por_area, "area"), { dec: 2, rotulo: 110 });
+    legenda(box, LEG_FM);
+    tabela(box, ["área", "dif. F−M (p.p.)", "IC 95%", "mulheres", "homens"], G.q2.dif_area.map((d) => [d.area, fmt(d.v, 2), `${fmt(d.lo, 2)} a ${fmt(d.hi, 2)}`, d.F.toLocaleString("pt-BR"), d.M.toLocaleString("pt-BR")]));
+
+    // Q3
+    box = moldura("g-q3-area", "Marcação de gênero, por área", "% de todas as sentenças com “primeira mulher a…”, “uma das poucas mulheres…”; média por pessoa, corrigida; IC 95%");
+    const areas3 = [...new Set(G.q3.por_area.map((d) => d.area))].sort((a, b) => busca(G.q3.por_area, "area")(b, "F").v - busca(G.q3.por_area, "area")(a, "F").v);
+    barrasH(box, areas3, SERIES_FM, busca(G.q3.por_area, "area"), { dec: 2, rotulo: 110 });
+    legenda(box, LEG_FM);
+    tabFM(box, G.q3.por_area, "area", "área");
+    box = moldura("g-q3-nasc", "Marcação de gênero nas biografias de mulheres, por geração e por criação do artigo", "% das sentenças; IC 95%");
+    const ger = G.q3.por_nasc.filter((d) => d.sexo === "F"), cri = G.q3.por_criacao.filter((d) => d.sexo === "F");
+    barrasH(box, ger.map((d) => "nasc. " + d.periodo_nasc).concat(cri.map((d) => "criado " + d.periodo_criacao)), [{ chave: "F", cor: COR.F, nome: "mulheres" }],
+      (c) => c.startsWith("nasc. ") ? ger.find((d) => "nasc. " + d.periodo_nasc === c) : cri.find((d) => "criado " + d.periodo_criacao === c), { dec: 2, rotulo: 120 });
+    tabela(box, ["grupo", "% (mulheres)", "IC 95%"], ger.map((d) => ["nascidas " + d.periodo_nasc, pct(d.v, 2), `${fmt(d.lo, 2)}–${fmt(d.hi, 2)}`]).concat(cri.map((d) => ["artigo criado " + d.periodo_criacao, pct(d.v, 2), `${fmt(d.lo, 2)}–${fmt(d.hi, 2)}`])));
+
+    // Q4
+    box = moldura("g-q4", "Família nas biografias de políticos", `% de todas as sentenças; IC 95%. Capital familiar: diferença F−M de ${fmt(G.q4_dif.v, 2)} p.p. (IC ${fmt(G.q4_dif.lo, 2)} a ${fmt(G.q4_dif.hi, 2)}).`);
+    const ordem4 = ["FAM_CAP", "FAM_ORIG", "FAM_DET", "FAM_ID"];
+    barrasH(box, ordem4.map((r) => NOMES[r]), SERIES_FM, (c, s) => G.q4.find((d) => NOMES[d.rotulo] === c && d.sexo === s), { dec: 2, rotulo: 150 });
+    legenda(box, LEG_FM);
+    tabFM(box, G.q4.map((d) => ({ ...d, nome: NOMES[d.rotulo] })), "nome", "rótulo");
+
+    // Q5
+    const per = [...new Set(G.q5.famid_lead.map((d) => d.periodo_criacao))];
+    const serie = (arr, s) => ({ cor: COR[s], nome: SEXO[s], dados: arr.filter((d) => d.sexo === s).map((d) => ({ x: d.periodo_criacao, v: d.v, lo: d.lo, hi: d.hi })) });
+    box = moldura("g-q5-famid", "Família como identidade no lead, por período de criação", "% das sentenças do lead; faixa = IC 95%");
+    linhas(box, per, [serie(G.q5.famid_lead, "F"), serie(G.q5.famid_lead, "M")]);
+    legenda(box, LEG_FM);
+    tabela(box, ["período", "dif. F−M (p.p.)", "IC 95%"], G.q5.dif_famid.map((d) => [d.periodo_criacao, fmt(d.v, 2), `${fmt(d.lo, 2)} a ${fmt(d.hi, 2)}`]));
+    box = moldura("g-q5-famdet", "Família como detalhe, por período de criação", "% de todas as sentenças; faixa = IC 95%");
+    linhas(box, per, [serie(G.q5.famdet, "F"), serie(G.q5.famdet, "M")]);
+    legenda(box, LEG_FM);
+    tabFM(box, G.q5.famdet, "periodo_criacao", "período");
+  }
+
+  // ---------- leads
+  const sem = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const lado = $("#lado"), info = $("#info-leads"), q = $("#q"), sug = $("#sug");
+  $("#chaves").innerHTML = DESTAQUE.map((r) => `<span style="--c:var(--c-${r})">${NOMES[r]}</span>`).join("") + `<span style="--c:transparent">sem destaque: carreira ou outro</span>`;
+  $("#f-rot").innerHTML += DESTAQUE.map((r) => `<option value="${r}">${NOMES[r]}</option>`).join("");
+  let L = null, R = null, idx = [];
+  const urlWiki = (t) => "https://pt.wikipedia.org/wiki/" + encodeURIComponent(t.replace(/ /g, "_"));
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  function cartao(l) {
+    const [titulo, atual, sexo, area, sents] = l;
+    const art = document.createElement("article"); art.className = "lead";
+    const corpo = sents.map(([r, t]) => {
+      const rot = R[r];
+      return DESTAQUE.includes(rot) ? `<mark style="--c:var(--c-${rot})" title="${NOMES[rot]}">${esc(t)}<sup>${CURTO[rot]}</sup></mark>` : esc(t);
+    }).join(" ");
+    art.innerHTML = `<button class="fechar" type="button" aria-label="Fechar">×</button>
+      <header><h3>${esc(titulo)}</h3><span class="meta"><span class="sexo" style="background:${COR[sexo]}"></span>${sexo === "F" ? "mulher" : "homem"} · ${esc(area)}</span></header>
+      <p>${corpo}</p>
+      <footer><a href="${urlWiki(atual)}" target="_blank" rel="noopener">ler na Wikipédia</a><span>texto: Wikipédia, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br" target="_blank" rel="noopener">CC BY-SA 4.0</a> · <a href="${urlWiki(atual)}?action=history" target="_blank" rel="noopener">autoria</a></span></footer>`;
+    art.querySelector(".fechar").onclick = () => { art.remove(); atualizarInfo(); };
+    return art;
+  }
+  function adicionar(l) {
+    lado.prepend(cartao(l));
+    while (lado.children.length > 4) lado.lastElementChild.remove();
+    atualizarInfo();
+  }
+  function atualizarInfo() { info.textContent = lado.children.length ? "" : "Nenhum lead aberto. Busque um nome ou sorteie um exemplo."; }
+
+  function carregar() {
+    if (L) return Promise.resolve();
+    info.textContent = "Carregando leads…";
+    return fetch("data/leads.json").then((r) => r.json()).then((d) => {
+      L = d.leads; R = d.rotulos; idx = L.map((l) => sem(l[0]));
+      const areas = [...new Set(L.map((l) => l[3]))].sort((a, b) => a.localeCompare(b, "pt"));
+      $("#f-area").innerHTML += areas.map((a) => `<option>${esc(a)}</option>`).join("");
+      atualizarInfo();
+      info.textContent = `${L.length.toLocaleString("pt-BR")} biografias disponíveis para busca.`;
+    }).catch(() => { info.textContent = "Não foi possível carregar os leads."; });
+  }
+  q.addEventListener("focus", carregar, { once: true });
+
+  let ativo = -1, atuais = [];
+  function sugerir() {
+    const t = sem(q.value.trim());
+    if (!L || t.length < 2) { sug.hidden = true; q.setAttribute("aria-expanded", "false"); return; }
+    atuais = [];
+    for (let i = 0; i < idx.length && atuais.length < 8; i++) if (idx[i].startsWith(t)) atuais.push(i);
+    for (let i = 0; i < idx.length && atuais.length < 8; i++) if (!idx[i].startsWith(t) && idx[i].includes(t)) atuais.push(i);
+    ativo = -1;
+    sug.innerHTML = atuais.length ? atuais.map((i, k) => `<li role="option" id="op${k}" data-i="${i}">${esc(L[i][0])}<span>${L[i][2] === "F" ? "mulher" : "homem"} · ${esc(L[i][3])}</span></li>`).join("")
+                                   : `<li role="option" aria-disabled="true">Nada encontrado nesta seleção</li>`;
+    sug.hidden = false; q.setAttribute("aria-expanded", "true");
+  }
+  function escolher(i) { if (i == null || isNaN(i)) return; adicionar(L[i]); q.value = ""; sug.hidden = true; q.setAttribute("aria-expanded", "false"); }
+  q.addEventListener("input", () => carregar().then(sugerir));
+  q.addEventListener("keydown", (e) => {
+    if (sug.hidden) return;
+    const itens = [...sug.querySelectorAll("li[data-i]")];
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault(); ativo = (ativo + (e.key === "ArrowDown" ? 1 : -1) + itens.length) % itens.length;
+      itens.forEach((li, k) => li.setAttribute("aria-selected", k === ativo)); q.setAttribute("aria-activedescendant", itens[ativo]?.id || "");
+    } else if (e.key === "Enter") { e.preventDefault(); escolher(+(itens[Math.max(ativo, 0)]?.dataset.i)); }
+    else if (e.key === "Escape") { sug.hidden = true; }
+  });
+  sug.addEventListener("pointerdown", (e) => { const li = e.target.closest("li[data-i]"); if (li) { e.preventDefault(); escolher(+li.dataset.i); } });
+  q.addEventListener("blur", () => setTimeout(() => { sug.hidden = true; }, 150));
+  $("#limpar").onclick = () => { lado.innerHTML = ""; q.value = ""; atualizarInfo(); };
+
+  $("#sortear").onclick = () => carregar().then(() => {
+    const rot = $("#f-rot").value, sx = $("#f-sexo").value, ar = $("#f-area").value;
+    const ri = rot ? R.indexOf(rot) : -1;
+    const ok = L.filter((l) => (!sx || l[2] === sx) && (!ar || l[3] === ar) && (ri < 0 || l[4].some((s) => s[0] === ri)));
+    if (!ok.length) { info.textContent = "Nenhuma biografia com esses filtros nesta seleção."; return; }
+    adicionar(ok[Math.floor(Math.random() * ok.length)]);
+  });
+  atualizarInfo();
+})();
+</script>
+</body>
+</html>
