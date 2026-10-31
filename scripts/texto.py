@@ -26,25 +26,55 @@ GENERO = re.compile(r"\bprimeir[ao] (mulher|homem)|\bmulheres\b|\bfeminin|\bfemi
 _SPLIT = re.compile(r"(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9\"“(])")
 _SECOES_LISTA = re.compile(
     r"^(refer[eê]ncias|notas|liga[cç][oõ]es externas|bibliografia|ver tamb[eé]m|fontes|leitura adicional|"
-    r"discografia|filmografia|obras|pr[eê]mios.*)$", re.I)
-_RUIDO = re.compile(r"^(Categoria|Category|miniaturadaimagem|thumb)\b.*$|\[\[(Ficheiro|Arquivo|Imagem|File):[^\]]*\]\]",
+    r"discografia|filmografia|obras|pr[eê]mios.*|t[ií]tulos|estat[ií]sticas|conquistas|galeria|honrarias|condecora[cç][oõ]es|publica[cç][oõ]es.*|resultados.*)$", re.I)
+_RUIDO = re.compile(r"^\s*[|{}!].*$|^(Categoria|Category|miniaturadaimagem|thumb)\b.*$|\[\[(Ficheiro|Arquivo|Imagem|File):[^\]]*\]\]",
                     re.I | re.M)
+
+
+_REF = re.compile(r"<ref[^>/]*/>|<ref[^>]*>.*?</ref>|<!--.*?-->", re.I | re.S)
+_LINK_NAO_TEXTO = re.compile(r"^\s*:?\s*(Categoria|Category|Ficheiro|Arquivo|Imagem|File|Image)\s*:", re.I)
+
+
+def _remover(code, nodes):
+    for n in nodes:
+        try:
+            code.remove(n)
+        except ValueError:
+            pass  # já removido junto com o nó pai
+
+
+def limpar_codigo(code, remover_titulos=False):
+    """Remove do wikicode o que não é prosa: templates (infobox, navbox), refs, galerias,
+    tabelas, links de categoria e de arquivo e, opcionalmente, os títulos de seção."""
+    _remover(code, code.filter_templates(recursive=False))
+    _remover(code, [t for t in code.filter_tags() if str(t.tag).lower() in ("ref", "gallery", "table", "references")])
+    _remover(code, [l for l in code.filter_wikilinks() if _LINK_NAO_TEXTO.match(str(l.title))])
+    if remover_titulos:
+        _remover(code, code.filter_headings())
+    return code
+
+
+def secoes(wt):
+    """Itera (indice, titulo, texto) das seções de nível 2; o lead tem indice 0 e titulo "".
+
+    Seções de lista (Referências, Ver também, Ligações externas, Discografia etc.) são puladas.
+    """
+    code = mw.parse(_REF.sub("", wt))
+    for i, sec in enumerate(code.get_sections(levels=[2], include_lead=True)):
+        heads = sec.filter_headings(recursive=False)
+        titulo = heads[0].title.strip_code().strip() if heads and i > 0 else ""
+        if i > 0 and not heads:
+            continue
+        if titulo and _SECOES_LISTA.match(titulo):
+            continue
+        txt = limpar_codigo(mw.parse(str(sec)), remover_titulos=True).strip_code(normalize=True, collapse=True)
+        txt = _RUIDO.sub("", txt)
+        yield i, titulo, re.sub(r"\n{2,}", "\n", txt).strip()
 
 
 def wikitext_para_texto(wt):
     """Wikitext -> texto plano, sem templates, refs, tabelas, seções de lista e linhas de categoria."""
-    code = mw.parse(wt)
-    for t in code.filter_templates(recursive=False):
-        try:
-            code.remove(t)
-        except ValueError:
-            pass
-    for tag in code.filter_tags():
-        if str(tag.tag).lower() in ("ref", "gallery", "table"):
-            try:
-                code.remove(tag)
-            except ValueError:
-                pass
+    code = limpar_codigo(mw.parse(_REF.sub("", wt)))
     linhas, pulando = [], False
     for linha in code.strip_code(normalize=True, collapse=True).split("\n"):
         s = linha.strip()

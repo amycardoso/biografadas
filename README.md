@@ -2,7 +2,7 @@
 
 Como a Wikipédia em português descreve as biografias de **mulheres e homens brasileiros**: quanto do texto trata de casamento, filhos, aparência e de ser "esposa de" alguém, em comparação com obra e carreira, e de que forma isso acontece.
 
-> Status: **etapa 1 (população) concluída**. As próximas etapas são a coleta de texto, as medidas, o classificador de sentenças e a análise.
+> Status: **etapas 1 (população), 2 (coleta) e 3 (segmentação) concluídas**. As próximas etapas são o classificador de sentenças e a análise.
 
 ## Perguntas
 
@@ -39,6 +39,29 @@ Como a Wikipédia em português descreve as biografias de **mulheres e homens br
 
 A participação das mulheres cresce com a década de nascimento: 6,1% entre os nascidos no século XIX, 15,8% entre 1900 e 1949, 23,9% entre 1950 e 1979 e 33,9% de 1980 em diante.
 
+**Coleta e segmentação** ([`notebooks/02_coleta.ipynb`](notebooks/02_coleta.ipynb)): baixei o texto de 45.383 dos 45.397 artigos de pessoas com sexo F ou M. Os 14 restantes não existem mais na pt.wiki (sitelinks desatualizados no Wikidata), e 260 foram alcançados por redirecionamento. A segmentação deu **1.120.642 sentenças**: 243.631 de mulheres e 877.011 de homens; 15% delas estão no lead.
+
+| | Mulheres | Homens |
+|---|---:|---:|
+| palavras de prosa (mediana) | 330 | 303 |
+| sentenças (mediana) | 16 | 15 |
+| palavras no lead (mediana) | 48 | 45 |
+| % stubs (< 150 palavras) | 21,2 | 25,7 |
+
+Os artigos de mulheres são um pouco mais longos no geral, e a diferença varia por área. Em política, a mediana das mulheres é 1,42 vez a dos homens: há muitos stubs de políticos homens (34%). Em esporte é o contrário, 0,71 vez, com 33% de stubs entre as atletas. Isso bate com o "teto de vidro" de Wagner et al. (2016): as mulheres que entram na Wikipédia tendem a ser mais notáveis.
+
+**Ano de criação do artigo** (estimado pelo pageid; o erro de calibração na validação cruzada tem mediana de 1 dia, p90 de 4 dias e 99% das estimativas a menos de 1 ano): a fração de mulheres entre as biografias **criadas** em cada ano mudou muito.
+
+| período de criação | artigos criados | % mulheres |
+|---|---:|---:|
+| 2002–2006 | 7.238 | 20,3 |
+| 2007–2011 | 17.417 | 13,5 |
+| 2012–2016 | 8.292 | 21,9 |
+| 2017–2021 | 7.782 | 23,4 |
+| 2022–2026 | 4.654 | **39,0** |
+
+Entre 2022 e 2023, cerca de 41 a 47% das biografias de brasileiros criadas eram de mulheres. Isso é compatível com campanhas como Women in Red e as editatonas da Wikimedia Brasil, mas ainda não é prova de causa. A pergunta 1 vai cruzar esse dado com o histórico de edições e com as categorias e predefinições de projetos de gênero.
+
 Um teste de viabilidade com 600 artigos e um piloto de 200 sentenças rotuladas mostraram duas coisas. Contar palavras de família quase não diferencia mulheres de homens. O que diferencia é a *função* da menção (família como identidade apareceu só em biografias de mulheres) e a marcação de gênero. Por isso o projeto mede a função de cada sentença, e não só a frequência de palavras. No piloto, a precisão do regex foi de 0,66 para família, 0,26 para marcação de gênero e 0,20 para aparência.
 
 ## Como reproduzir
@@ -46,10 +69,17 @@ Um teste de viabilidade com 600 artigos e um piloto de 200 sentenças rotuladas 
 ```bash
 make setup        # cria .venv e instala requirements.txt
 make populacao    # etapa 1: Wikidata -> data/processed/populacao.csv
+make coleta       # etapa 2: wikitext dos artigos -> data/cache/ (retomável; ~1 h)
+make criacao      # data de criação estimada pelo pageid (~400 requisições)
+make sentencas    # etapa 3: limpeza e segmentação -> data/processed/sentencas.parquet
 make notebooks    # executa os notebooks
 ```
 
-As consultas ao Wikidata usam um User-Agent que identifica o projeto, são feitas em lotes sequenciais e recuam (backoff) ao receber HTTP 429 ou 5xx. As respostas brutas ficam em cache em `data/raw/`, que não é versionado. `make populacao-atualizar` refaz as consultas.
+As requisições usam um User-Agent que identifica o projeto e são sequenciais. Elas recuam (backoff) ao receber HTTP 429 ou 5xx, e a API da Wikipédia é chamada com `maxlag=5`. As respostas brutas ficam em cache em `data/raw/` e `data/cache/`, que não são versionados. `make populacao-atualizar` refaz as consultas ao Wikidata.
+
+**Por que wikitext, e não `prop=extracts`:** com o texto completo, o TextExtracts devolve um artigo por requisição e a pt.wiki passou a responder 429. Com `prop=revisions` vêm 50 páginas por requisição: cerca de 900 requisições para a população toda.
+
+**Data de criação:** a primeira revisão de cada página exigiria cerca de 45 mil requisições individuais. Como o pageid é atribuído em ordem crescente na criação da página, `scripts/criacao.py` busca a primeira revisão de 400 páginas espalhadas por todo o intervalo de pageids e interpola uma função monótona pageid → data para todos os artigos. O erro é medido por validação cruzada (ver abaixo). Páginas apagadas e recriadas recebem a data da recriação.
 
 ## Estrutura
 
@@ -59,14 +89,27 @@ scripts/
   populacao.py           etapa 1: população via Wikidata
   areas.py               regras ocupação -> área; mantém data/areas.csv
   analise_populacao.py   tabelas usadas pelo notebook 01
-  texto.py               wikitext -> texto, sentenças, léxicos (pré-filtro), mascaramento de nome
-  gerar_notebook_01.py   gera notebooks/01_populacao.ipynb
+  coleta.py              etapa 2: wikitext em lotes de 50 (retomável)
+  criacao.py             data de criação estimada pelo pageid
+  sentencas.py           etapa 3: limpeza e segmentação em sentenças
+  analise_coleta.py      tabelas usadas pelo notebook 02
+  texto.py               limpeza de wikitext, seções, sentenças, léxicos (pré-filtro), mascaramento de nome
+  gerar_notebook_0*.py   geram os notebooks
 notebooks/               só chamam scripts/ e plotam
 data/
   areas.csv              mapeamento versionado ocupação (P106) -> área
   processed/populacao.csv
-  raw/, cache/           não versionados
+  processed/artigos_meta.csv       por artigo: pageid, revid, timestamp, bytes, redirecionamento
+  processed/artigos_texto.csv      por artigo: sentenças, palavras, palavras no lead, seções
+  processed/artigos_criacao.csv    data de criação estimada
+  processed/criacao_calibracao.csv amostra de primeiras revisões reais
+  processed/sentencas.parquet      uma linha por sentença (não versionado; ~70 MB)
+  raw/, cache/                     não versionados
 ```
+
+### `data/processed/sentencas.parquet`
+
+As colunas são `qid`, `sexo`, `area`, `sec_idx` (0 = lead), `secao` (título da seção de nível 2), `lead`, `sent_idx`, `pos_rel` (0 = início e 1 = fim do artigo), `palavras` e `texto`. A limpeza remove templates (infobox, navboxes, citações), `<ref>`, tabelas, galerias, links de categoria e de arquivo e as seções de lista: Referências, Ver também, Ligações externas, Bibliografia, Discografia, Filmografia, Obras, Prêmios, Títulos, Estatísticas, Publicações etc.
 
 ### `data/areas.csv`
 

@@ -7,3 +7,5 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .DS_Store
+# texto derivado (grande; regenerável com `make sentencas`)
+data/processed/sentencas.parquet
