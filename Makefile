@@ -1,7 +1,8 @@
 PY := .venv/bin/python
+ROTULOS ?= v3
 JUPYTER := .venv/bin/jupyter
 
-.PHONY: setup setup-ml populacao populacao-atualizar coleta sentencas criacao amostra lotes rotulos modelos bertimbau notebooks limpar-cache
+.PHONY: setup setup-ml populacao populacao-atualizar coleta sentencas criacao amostra lotes rotulos reforco rotulos-v3 modelos bertimbau notebooks limpar-cache
 
 setup:
 	python3 -m venv .venv
@@ -42,14 +43,21 @@ lotes:
 rotulos:
 	cd scripts && ../$(PY) lotes.py consolidar
 
+## Guia v3: reforço de FAM_ID, lotes e consolidação (ROTULOS=v3 nos alvos de modelo)
+reforco:
+	cd scripts && ../$(PY) amostra_reforco.py && ../$(PY) lotes_v3.py preparar
+
+rotulos-v3:
+	cd scripts && ../$(PY) lotes_v3.py consolidar
+
 ## Baselines (regex, TF-IDF) e avaliação de todos os modelos
 modelos:
-	cd scripts && ../$(PY) modelos.py
+	cd scripts && ROTULOS=$(ROTULOS) ../$(PY) modelos.py
 
 ## Fine-tuning do BERTimbau (MPS se disponível), seguido da avaliação
 bertimbau:
-	nice -n 10 .venv-ml/bin/python scripts/bertimbau.py
-	cd scripts && ../$(PY) -c "import modelos; modelos.avaliar_todos()"
+	ROTULOS=$(ROTULOS) nice -n 10 .venv-ml/bin/python scripts/bertimbau.py
+	cd scripts && ROTULOS=$(ROTULOS) ../$(PY) -c "import modelos; modelos.avaliar_todos()"
 
 notebooks:
 	cd scripts && ../$(PY) gerar_notebook_01.py && ../$(PY) gerar_notebook_02.py && ../$(PY) gerar_notebook_03.py

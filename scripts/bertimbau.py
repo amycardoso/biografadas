@@ -8,10 +8,14 @@ PESSOA dentro do treino (10%). O teste fixo só é usado na predição final.
 Saídas: data/labels/predicoes/bertimbau.csv e data/labels/bertimbau_treino.json
 (o modelo treinado fica em data/cache/bertimbau/, não versionado).
 
+Com ROTULOS=v3 no ambiente, treina com a amostra e os rótulos v3 (ver modelos.py).
+
 Uso: .venv-ml/bin/python scripts/bertimbau.py
+     ROTULOS=v3 .venv-ml/bin/python scripts/bertimbau.py
 """
 import hashlib
 import json
+import os
 import time
 from pathlib import Path
 
@@ -24,15 +28,21 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer, get_
 
 ROOT = Path(__file__).resolve().parents[1]
 LAB = ROOT / "data" / "labels"
-CACHE = ROOT / "data" / "cache" / "bertimbau"
+VERSAO = os.environ.get("ROTULOS", "v2")
+SUF = "" if VERSAO == "v2" else f"_{VERSAO}"
+CACHE = ROOT / "data" / "cache" / f"bertimbau{SUF}"
 MODELO = "neuralmind/bert-base-portuguese-cased"
 ROTULOS = ["CAR", "FAM_ID", "FAM_DET", "FAM_ORIG", "FAM_CAP", "APAR", "GEN", "OUTRO"]
 CFG = {"max_len": 128, "batch": 16, "epocas": 4, "lr": 3e-5, "warmup": 0.1, "seed": 13}
 
 
 def dados():
-    a = pd.read_csv(LAB / "amostra_v2.csv")
-    r = pd.read_csv(LAB / "rotulos_anotador_a.csv", dtype=str).rename(columns={"id": "sid"})
+    if VERSAO == "v3":
+        a = pd.read_csv(LAB / "amostra_v3.csv")
+        r = pd.read_csv(LAB / "rotulos_v3.csv", dtype=str)
+    else:
+        a = pd.read_csv(LAB / "amostra_v2.csv")
+        r = pd.read_csv(LAB / "rotulos_anotador_a.csv", dtype=str).rename(columns={"id": "sid"})
     d = a.merge(r[["sid", "rotulo"]], on="sid")
     h = d.qid.map(lambda q: int(hashlib.md5(q.encode()).hexdigest()[:6], 16) / 0xFFFFFF)
     d["parte"] = np.where(d.split == "teste", "teste", np.where(h < 0.10, "val", "treino"))
@@ -99,9 +109,9 @@ def main():
 
     modelo = AutoModelForSequenceClassification.from_pretrained(CACHE).to(dev)
     pt = prever(modelo, ds_te, dev)
-    (LAB / "predicoes").mkdir(exist_ok=True)
-    pd.DataFrame({"sid": te.sid, "pred": [ROTULOS[i] for i in pt]}).to_csv(LAB / "predicoes" / "bertimbau.csv", index=False)
-    (LAB / "bertimbau_treino.json").write_text(json.dumps(
+    (LAB / f"predicoes{SUF}").mkdir(exist_ok=True)
+    pd.DataFrame({"sid": te.sid, "pred": [ROTULOS[i] for i in pt]}).to_csv(LAB / f"predicoes{SUF}" / "bertimbau.csv", index=False)
+    (LAB / f"bertimbau_treino{SUF}.json").write_text(json.dumps(
         {"modelo": MODELO, "config": CFG, "dispositivo": str(dev), "historico": hist,
          "melhor_val_macro_f1": round(melhor, 3), "n": {"treino": len(tr), "val": len(va), "teste": len(te)}},
         ensure_ascii=False, indent=1))

@@ -5,9 +5,15 @@ de referência são os do anotador A (data/labels/rotulos_anotador_a.csv). As
 predições de cada modelo no teste ficam em data/labels/predicoes/<modelo>.csv,
 e as métricas em data/labels/metricas.json.
 
-Uso: python scripts/modelos.py
+Com ROTULOS=v3 no ambiente, usa a amostra v3 (com reforço) e os rótulos do
+guia v3 (data/labels/rotulos_v3.csv), e grava em predicoes_v3/ e metricas_v3.json.
+O teste fixo é o mesmo nas duas versões.
+
+Uso: python scripts/modelos.py          (v2)
+     ROTULOS=v3 python scripts/modelos.py
 """
 import json
+import os
 import re
 
 import numpy as np
@@ -21,12 +27,18 @@ from common import DATA
 from texto import APARENCIA, CONJUGE, FAMILIA, FILIACAO
 
 LAB = DATA / "labels"
-PRED = LAB / "predicoes"
+VERSAO = os.environ.get("ROTULOS", "v2")
+SUF = "" if VERSAO == "v2" else f"_{VERSAO}"
+PRED = LAB / f"predicoes{SUF}"
 ROTULOS = ["CAR", "FAM_ID", "FAM_DET", "FAM_ORIG", "FAM_CAP", "APAR", "GEN", "OUTRO"]
 GEN_RX = re.compile(r"\bprimeir[ao] (mulher|homem)|\buma das (poucas|primeiras) mulheres|\bpioneir[ao] entre", re.I)
 
 
 def carregar():
+    if VERSAO == "v3":
+        a = pd.read_csv(LAB / "amostra_v3.csv")
+        r = pd.read_csv(LAB / "rotulos_v3.csv", dtype=str)
+        return a.merge(r[["sid", "rotulo"]], on="sid", how="inner")
     a = pd.read_csv(LAB / "amostra_v2.csv")
     r = pd.read_csv(LAB / "rotulos_anotador_a.csv", dtype=str).rename(columns={"id": "sid"})
     return a.merge(r[["sid", "rotulo"]], on="sid", how="inner")
@@ -79,12 +91,12 @@ def avaliar_todos():
     for f in sorted(PRED.glob("*.csv")):
         p = pd.read_csv(f).set_index("sid").reindex(teste.index)
         res["modelos"][f.stem] = metricas(teste.rotulo, p.pred.fillna("OUTRO"))
-    b = LAB / "rotulos_anotador_b.csv"
+    b = LAB / ("rotulos_anotador_b.csv" if VERSAO == "v2" else f"rotulos_anotador_b_{VERSAO}.csv")
     if b.exists():
         rb = pd.read_csv(b, dtype=str).rename(columns={"id": "sid"}).set_index("sid")
         comum = teste.index.intersection(rb.index)
         res["anotador_b_vs_a"] = {"n": len(comum), **metricas(teste.loc[comum, "rotulo"], rb.loc[comum, "rotulo"])}
-    (LAB / "metricas.json").write_text(json.dumps(res, ensure_ascii=False, indent=1))
+    (LAB / f"metricas{SUF}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1))
     for m, v in res["modelos"].items():
         print(f"{m:15s} macro-F1 {v['macro_f1']:.3f}  acc {v['acuracia']:.3f}  κ {v['kappa']:.3f}")
     if "anotador_b_vs_a" in res:

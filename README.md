@@ -62,24 +62,32 @@ Os artigos de mulheres são um pouco mais longos no geral, e a diferença varia 
 
 Entre 2022 e 2023, cerca de 41 a 47% das biografias de brasileiros criadas eram de mulheres. Isso é compatível com campanhas como Women in Red e as editatonas da Wikimedia Brasil, mas ainda não é prova de causa. A pergunta 1 vai cruzar esse dado com o histórico de edições e com as categorias e predefinições de projetos de gênero.
 
-**Classificador de sentenças** ([`notebooks/03_classificador.ipynb`](notebooks/03_classificador.ipynb)): os modelos foram treinados com 3.332 sentenças rotuladas e avaliados num teste fixo de 622 sentenças, de pessoas que não aparecem no treino. A referência é o anotador A, um LLM.
+**Classificador de sentenças** ([`notebooks/03_classificador.ipynb`](notebooks/03_classificador.ipynb)): o teste fixo tem 622 sentenças de pessoas que não aparecem no treino, e a referência é o anotador A, um LLM. Houve duas rodadas:
 
-| modelo | macro-F1 | acurácia | κ vs A |
-|---|---:|---:|---:|
-| regex (léxicos de `texto.py`) | 0,34 | 0,52 | 0,34 |
-| TF-IDF + regressão logística | 0,50 | 0,69 | 0,56 |
-| **BERTimbau base, ajustado** | **0,70** | **0,81** | **0,74** |
-| *anotador B (outro LLM, n = 300), como teto* | *0,74* | *0,84* | *0,78* |
+- **v2** (commit `c27afe5`): 3.332 sentenças de treino, rótulos do guia v2.
+- **v3** (atual): guia v3, com a regra da frase de abertura e o teste da cópula para FAM_ID. O treino tem 350 sentenças de reforço com construções de cônjuge e família, todas de pessoas do treino. Receberam rótulos novos com a v3 as sentenças FAM_ID e FAM_DET do treino, as frases de abertura rotuladas OUTRO e o teste fixo inteiro (`scripts/lotes_v3.py`).
 
-F1 do BERTimbau por rótulo (suporte no teste entre parênteses):
+Todos os modelos abaixo foram avaliados contra os **rótulos v3 do teste**. Os intervalos são de bootstrap, e o macro-F1 é calculado sem APAR, que tem 1 caso no teste.
 
-| CAR (248) | OUTRO (171) | FAM_DET (106) | GEN (23) | FAM_ORIG (38) | FAM_CAP (25) | APAR (2) | FAM_ID (9) |
-|---:|---:|---:|---:|---:|---:|---:|---:|
-| 0,88 | 0,79 | 0,83 | 0,84 | 0,61 | 0,60 | 0,67 | **0,36** |
+| modelo | macro-F1 (sem APAR) | IC 95% | κ vs A | F1 FAM_ID | IC 95% |
+|---|---:|---|---:|---:|---|
+| regex (léxicos de `texto.py`) | — | — | 0,37 | — | — |
+| TF-IDF + regressão logística (v3) | 0,66 | 0,58–0,71 | 0,58 | 0,56 | 0,20–0,80 |
+| BERTimbau treinado com a v2 (`c27afe5`) | 0,70 | 0,63–0,76 | 0,71 | 0,33 | 0,00–0,67 |
+| **BERTimbau treinado com a v3** | **0,77** | **0,71–0,83** | **0,78** | **0,63** | **0,29–0,86** |
 
-O BERTimbau chega perto da concordância entre os dois anotadores LLM. Ele vai bem em carreira, família como detalhe e marcação de gênero, mas ainda erra em **FAM_ID**, a categoria central da pergunta 2: há só 51 exemplos no total e 9 no teste. Antes de usar o modelo nessa pergunta, é preciso ampliar FAM_ID com mais sentenças de lead que tenham termos de cônjuge e trocar o macro-F1 por intervalos de confiança.
+F1 do BERTimbau v3 por rótulo (suporte no teste entre parênteses):
 
-O treino levou cerca de 7 minutos no MPS de um M1 Pro (4 épocas, batch 16, `max_len` 128). A época foi escolhida pelo macro-F1 numa validação separada por pessoa.
+| CAR (280) | OUTRO (151) | FAM_DET (96) | GEN (22) | FAM_ORIG (36) | FAM_CAP (26) | FAM_ID (10) |
+|---:|---:|---:|---:|---:|---:|---:|
+| 0,91 | 0,78 | 0,86 | 0,87 | 0,70 | 0,66 | 0,63 |
+
+- O macro-F1 melhorou de forma consistente: os intervalos quase não se sobrepõem.
+- **FAM_ID passou de 0,33 para 0,63**, mas o teste tem só 10 casos, e o intervalo de 0,29 a 0,86 continua largo. A melhora é provável, mas mal estimada.
+- O reforço rendeu menos FAM_ID do que o esperado: só 25 das 350 sentenças, 18 de mulheres e 7 de homens. Com o teste da cópula, a maioria das construções "esposa/marido de" é FAM_DET ou FAM_CAP. FAM_ID é de fato raro.
+- Para estimar FAM_ID na população, as próximas etapas devem usar a correção de erro de classificação, com a matriz de confusão por classe, e reportar os intervalos.
+
+O treino de cada rodada levou cerca de 7 a 8 minutos no MPS de um M1 Pro (4 épocas, batch 16, `max_len` 128, perda com peso de classe ∝ 1/√frequência). A época foi escolhida pelo macro-F1 numa validação separada por pessoa.
 
 Um teste de viabilidade com 600 artigos e um piloto de 200 sentenças rotuladas mostraram duas coisas. Contar palavras de família quase não diferencia mulheres de homens. O que diferencia é a *função* da menção (família como identidade apareceu só em biografias de mulheres) e a marcação de gênero. Por isso o projeto mede a função de cada sentença, e não só a frequência de palavras. No piloto, a precisão do regex foi de 0,66 para família, 0,26 para marcação de gênero e 0,20 para aparência.
 
@@ -93,7 +101,7 @@ make criacao      # data de criação estimada pelo pageid (~400 requisições)
 make sentencas    # etapa 3: limpeza e segmentação -> data/processed/sentencas.parquet
 make amostra      # etapa 4: amostra estratificada para rotulagem
 make rotulos      # valida e consolida os rótulos dos anotadores
-make modelos      # baselines regex e TF-IDF + avaliação
+make modelos      # baselines regex e TF-IDF + avaliação (ROTULOS=v3 make modelos para a v3)
 make setup-ml && make bertimbau   # fine-tuning do BERTimbau (Python 3.12, MPS)
 make notebooks    # executa os notebooks
 ```
@@ -161,11 +169,15 @@ A data de criação do artigo não está no Wikidata. Ela é estimada na etapa 2
 | `rotulos_anotador_b.csv` | 300 sentenças do teste, anotador B (subagente Claude Opus), para medir concordância |
 | `log_rotulagem.csv` | proveniência por lote: anotador, modelo, guia, prompt, data |
 | `concordancia_v2.json`, `discordancias_v2.csv` | κ de A×B e as sentenças em que os dois discordam |
+| `amostra_v3.csv` | v2 + 350 de reforço (`scripts/amostra_reforco.py`), com `estrato_v3`, `peso_v3` (pós-estratificação) e `origem` |
+| `rotulos_anotador_a_v3.csv`, `rotulos_anotador_b_v3.csv` | rótulos do guia v3: A nas 1.622 sentenças afetadas, B nas mesmas 300 do teste |
+| `rotulos_v3.csv` | rótulo final por sentença (v3 quando houve rótulo novo, v2 nas demais), com `guia`, `rotulo_v2` e `motivo_v3` |
+| `concordancia_v3.json`, `discordancias_v3.csv`, `metricas_v3.json` | κ da v3, discordâncias e métricas com bootstrap |
 | `vazamento_genero.json` | AUC de um classificador que prevê o sexo a partir do texto mascarado |
 
 **Como foi a rotulagem:** não havia chave de API de LLM no ambiente. Por isso os anotadores são subagentes do Claude Code. Cada um recebe só o guia (`docs/guia_rotulos_v2.md`) e um lote com `id,texto` mascarado, sem sexo, área ou estrato (prompt em `docs/prompt_rotulagem_v2.md`). As saídas são validadas: todos os ids e só rótulos do conjunto. Um lote com ids malformados foi refeito.
 
-**Concordância:** κ = **0,78** entre A e B com o guia v2 (84% de concordância bruta, n = 300). No piloto com o guia v1, o κ entre dois LLMs tinha sido 0,63. FAM_ID ficou com κ = 0,92 e GEN com 1,00. A maior parte do desacordo que sobra é **OUTRO vs CAR na primeira frase do lead** ("[PESSOA] (cidade, data – data) foi um bispo…"): 22 dos 48 casos. Isso fica para o guia v3. Atenção: **esta é concordância LLM–LLM, não humana**. Uma validação humana do conjunto de teste continua pendente.
+**Concordância:** κ = **0,78** entre A e B com o guia v2 (84% de concordância bruta, n = 300). No piloto com o guia v1, o κ entre dois LLMs tinha sido 0,63. FAM_ID ficou com κ = 0,92 e GEN com 1,00. A maior parte do desacordo que sobra é **OUTRO vs CAR na primeira frase do lead** ("[PESSOA] (cidade, data – data) foi um bispo…"): 22 dos 48 casos. O guia v3 tratou esse caso. **Com o guia v3, o κ entre A e B nas mesmas 300 sentenças subiu para 0,87** (91% de concordância). FAM_ID ficou com κ de 0,83 e CAR com 0,93. O desacordo que sobra é principalmente OUTRO × CAR (8 casos) e FAM_DET × OUTRO (7). Ao rotular de novo com a v3, 295 das 1.272 sentenças que já tinham rótulo v2 mudaram de rótulo. A maior mudança foi a das frases de abertura: 167 passaram de OUTRO para CAR. Os padrões do guia v3 foram tirados dos erros do BERTimbau no teste, mas os exemplos do guia são sintéticos e não reproduzem sentenças do teste. Mesmo assim, esse é um pequeno risco de ajuste ao teste. Atenção: **esta é concordância LLM–LLM, não humana**. Uma validação humana do conjunto de teste continua pendente.
 
 **Licença:** os textos das sentenças são trechos curtos da Wikipédia e seguem sob CC BY-SA 4.0, como o restante dos dados derivados.
 

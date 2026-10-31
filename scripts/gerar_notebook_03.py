@@ -58,8 +58,22 @@ cells = [
          "    bt = json.load(open(LAB + 'bertimbau_treino.json'))\n"
          "    print(bt['modelo'], bt['dispositivo'], bt['config'])\n"
          "    display(pd.DataFrame(bt['historico']))"),
+    md("## Guia v3 e reforço de FAM_ID\n\n"
+       "- **Guia v3:** acrescenta a regra 0 (frase de abertura) e o teste da cópula.\n"
+       "- **Reforço:** 350 sentenças de pessoas do treino.\n"
+       "- **Rótulos novos com a v3:** as sentenças de reforço, as de FAM_ID e FAM_DET do treino, as frases de abertura rotuladas OUTRO e o **teste fixo inteiro**.\n\n"
+       "Na comparação abaixo, todos os modelos são avaliados contra os **rótulos v3 do teste**, inclusive o BERTimbau treinado com a v2 (`bertimbau_treino_v2`)."),
+    code("m3 = json.load(open(LAB + 'metricas_v3.json'))\n"
+         "c3 = json.load(open(LAB + 'concordancia_v3.json'))\n"
+         "print(f\"κ A×B: v1 {c3['kappa_v1_piloto']} → v2 {c3['kappa_v2']} → v3 {c3['kappa']} (n={c3['n']})\")\n"
+         "t = pd.DataFrame({m: {'macro-F1': v['macro_f1'], 'κ vs A': v['kappa'], 'F1 FAM_ID': v['f1_por_rotulo']['FAM_ID']} for m, v in m3['modelos'].items()}).T\n"
+         "bs = pd.DataFrame(m3['bootstrap']).T\n"
+         "t.join(bs)"),
+    code("f1v3 = pd.DataFrame({m: v['f1_por_rotulo'] for m, v in m3['modelos'].items()})\n"
+         "f1v3['suporte no teste'] = pd.Series(m3['modelos']['bertimbau']['suporte'])\n"
+         "f1v3"),
     md("## Observações\n\n"
-       "- APAR (16 casos na amostra) e FAM_ID (51) são raros. As métricas por rótulo nessas classes têm alta variância no teste.\n"
+       "- APAR e FAM_ID são raros. Com os rótulos v3, há 77 casos de FAM_ID na amostra, 10 deles no teste, e 17 de APAR, 1 no teste. O F1 dessas classes tem intervalo largo (ver bootstrap). O macro-F1 sem APAR é a medida mais estável.\n"
        "- O teto prático é a concordância entre anotadores: o anotador B atinge macro-F1 de cerca de 0,74 contra A. Um modelo acima disso estaria aprendendo os vieses do anotador A.\n"
        "- O próximo passo é aplicar o melhor modelo às 1,1 milhão de sentenças e estimar as proporções por sexo, área e período, com os pesos e as correções de erro de classificação."),
 ]
