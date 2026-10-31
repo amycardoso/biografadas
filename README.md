@@ -6,11 +6,19 @@ Como a Wikipédia em português descreve as biografias de **mulheres e homens br
 
 ## Perguntas
 
-1. **Volume:** que parcela do texto das biografias de mulheres e de homens trata de vida pessoal (família, relacionamentos, aparência), dentro de cada área de atuação?
-2. **Função:** quando a família aparece, ela é *identidade* ("a última esposa do sambista Cartola"), *detalhe biográfico* ("foi casado 37 anos com a pintora…") ou *capital* (dinastias políticas e artísticas)? Ela aparece no lead ou no corpo do texto?
-3. **Marcação de gênero:** com que frequência o gênero da pessoa é marcado ("primeira mulher a…", "uma das poucas mulheres…")?
-4. **Tempo:** as diferenças mudam com a década de nascimento e com a data de criação do artigo?
-5. **Método:** um classificador de sentenças (rótulos de LLM com validação humana) mede isso melhor que léxicos e regex? Quanto custa?
+1. **Quem tem biografia:** qual a fração de mulheres por área, por década de nascimento e por ano de criação do artigo? Campanhas como Women in Red deixaram marca visível?
+2. **Identidade emprestada:** com que frequência a mulher é apresentada pelo cônjuge, pelo pai ou por um filho ("a última esposa do sambista Cartola"), sobretudo no primeiro parágrafo? Em que áreas isso acontece mais?
+3. **Marcação de gênero:** frases como "primeira mulher a…" e "uma das poucas mulheres…" funcionam como reconhecimento ou como marca de "outro"?
+4. **Família como capital:** como a genealogia ("filho do senador…", "neta do governador…") aparece nas biografias de políticos, por gênero?
+5. **Tempo:** os artigos recentes são escritos de outro jeito?
+
+## Método
+
+- **Unidade de análise:** a sentença. Léxicos e regex amplos (`scripts/texto.py`) servem só como pré-filtro de candidatas.
+- **Rótulos:** carreira, família como identidade, família como detalhe, filiação, família como capital, aparência, marcação de gênero e outro. Os rótulos são atribuídos por um LLM com o nome do biografado mascarado (`[PESSOA]`), seguindo um guia de anotação.
+- **Validação manual:** uma amostra rotulada às cegas por uma pessoa, com concordância medida pelo κ de Cohen entre a pessoa e o LLM.
+- **Comparação de modelos:** regex, LLM zero-shot e BERTimbau ajustado com os rótulos, avaliados contra o conjunto validado à mão (F1 por classe e custo).
+- **Análise:** diferenças F−M por área, posição no texto (lead ou corpo), década de nascimento e ano de criação do artigo, com intervalos de confiança e controle de tamanho do artigo.
 
 ## Resultados até agora
 
@@ -31,7 +39,7 @@ Como a Wikipédia em português descreve as biografias de **mulheres e homens br
 
 A participação das mulheres cresce com a década de nascimento: 6,1% entre os nascidos no século XIX, 15,8% entre 1900 e 1949, 23,9% entre 1950 e 1979 e 33,9% de 1980 em diante.
 
-Um teste de viabilidade com 600 artigos e um piloto de 200 sentenças rotuladas mostraram duas coisas. Contar palavras de família quase não diferencia mulheres de homens. O que diferencia é a *função* da menção (família como identidade apareceu só em biografias de mulheres) e a marcação de gênero. Por isso o projeto mede a função de cada sentença, e não só a frequência de palavras.
+Um teste de viabilidade com 600 artigos e um piloto de 200 sentenças rotuladas mostraram duas coisas. Contar palavras de família quase não diferencia mulheres de homens. O que diferencia é a *função* da menção (família como identidade apareceu só em biografias de mulheres) e a marcação de gênero. Por isso o projeto mede a função de cada sentença, e não só a frequência de palavras. No piloto, a precisão do regex foi de 0,66 para família, 0,26 para marcação de gênero e 0,20 para aparência.
 
 ## Como reproduzir
 
