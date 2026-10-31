@@ -3,6 +3,7 @@ data/raw/
 data/cache/
 # ambiente
 .venv/
+.venv-ml/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/

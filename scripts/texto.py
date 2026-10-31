@@ -106,3 +106,11 @@ def mascarar_nome(sentenca, titulo):
     for p in sorted(partes, key=len, reverse=True):
         sentenca = re.sub(r"\b" + re.escape(p) + r"\b", "[PESSOA]", sentenca)
     return re.sub(r"(\[PESSOA\]\s*)+", "[PESSOA] ", sentenca).replace("[PESSOA] ,", "[PESSOA],").strip()
+
+
+_PRONOMES = re.compile(r"\b([Ee]les?|[Ee]las?|[Dd]el[ea]s?|[Nn]el[ea]s?)\b")
+
+
+def mascarar_pronomes(sentenca):
+    """Troca pronomes pessoais de 3ª pessoa por [PRON] (ver docs/guia_rotulos_v2.md)."""
+    return _PRONOMES.sub("[PRON]", sentenca)

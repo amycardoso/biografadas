@@ -1,0 +1,8 @@
+{
+ "descricao": "AUC (GroupKFold por pessoa) de TF-IDF+LogReg prevendo sexo=F a partir do texto",
+ "auc": {
+  "texto_so_nome": 0.81,
+  "texto_mascarado": 0.801
+ },
+ "n": 3954
+}
